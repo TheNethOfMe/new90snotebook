@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// TODO: Do we really need a 'name' field in these objects?
+
 const UserSchema = new Schema({
   name: {
     type: String,
