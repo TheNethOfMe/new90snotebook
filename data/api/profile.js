@@ -7,6 +7,9 @@ const passport = require("passport");
 const Profile = require("../models/Profile");
 const User = require("../models/User");
 
+// Load validation
+const validateProfileInput = require("../../validation/profile");
+
 // ROUTE  GET api/profile/test
 // DESC   Gets Test Profile Route
 // ACCESS Public
@@ -43,6 +46,10 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    const { errors, isValid } = validateProfileInput(req.body);
+    if (!isValid) {
+      res.status(400).json(errors);
+    }
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.firstName) profileFields.firstName = req.body.firstName;
@@ -77,6 +84,48 @@ router.post(
         );
       }
     });
+  }
+);
+
+// ROUTE  GET api/profile/screenname/:sn
+// DESC   Gets a User Profile by ScreenName
+// ACCESS Private
+router.get(
+  "/screenname/:sn",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const errors = {};
+    Profile.findOne({ screenName: req.params.sn })
+      .populate("user", ["email"])
+      .then(profile => {
+        if (!profile) {
+          errors.noprofile = "There is no profile for this user.";
+          res.status(404).json(errors);
+        }
+        res.json(profile);
+      })
+      .catch(err => res.status(500).json(err));
+  }
+);
+
+// ROUTE  GET api/profile/user/:user_id
+// DESC   Gets a User Profile by User ID
+// ACCESS Private
+router.get(
+  "/user/:user_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const errors = {};
+    Profile.findOne({ user: req.params.user_id })
+      .populate("user", ["email"])
+      .then(profile => {
+        if (!profile) {
+          errors.noprofile = "There is no profile for this user.";
+          res.status(404).json(errors);
+        }
+        res.json(profile);
+      })
+      .catch(err => res.status(500).json(err));
   }
 );
 
