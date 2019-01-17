@@ -3,5 +3,4 @@ package-lock.json
 .DS_Store
 client/src/**/*.css
 config/keys_dev.js
-client/public
 client/node_modules/
