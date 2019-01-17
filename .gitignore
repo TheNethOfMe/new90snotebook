@@ -1,5 +1,7 @@
-/node_modules
+node_modules/
 package-lock.json
 .DS_Store
 client/src/**/*.css
-/config/keys_dev.js
+config/keys_dev.js
+client/public
+client/node_modules/
