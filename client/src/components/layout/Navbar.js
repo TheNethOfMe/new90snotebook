@@ -1,21 +1,18 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
     return (
       <div>
         <nav className="header__nav">
-          <div className="header__nav-item">
-            <p>Menu</p>
-          </div>
+          <Link className="header__nav-item" to="/login">
+            <p>Login</p>
+          </Link>
 
-          <div className="header__nav-item">
-            <p>Settings</p>
-          </div>
-
-          <div className="header__nav-item">
-            <p>Logout</p>
-          </div>
+          <Link className="header__nav-item" to="/register">
+            <p>Register</p>
+          </Link>
         </nav>
       </div>
     );
