@@ -5,7 +5,7 @@ import classnames from "classnames";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 
-class Register extends Component {
+export class Register extends Component {
   constructor() {
     super();
     this.state = {
