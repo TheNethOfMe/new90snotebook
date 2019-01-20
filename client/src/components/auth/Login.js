@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {
