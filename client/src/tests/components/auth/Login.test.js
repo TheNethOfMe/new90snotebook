@@ -23,12 +23,12 @@ test("should write text to inputs", () => {
   expect(wrapper.state().email).toBeFalsy();
   expect(wrapper.state().password).toBeFalsy();
   wrapper
-    .find("input")
+    .find("TextFieldGroup")
     .at(0)
     .simulate("change", { target: { name: "email", value: testVal } });
   expect(wrapper.state().email).toEqual(testVal);
   wrapper
-    .find("input")
+    .find("TextFieldGroup")
     .at(1)
     .simulate("change", { target: { name: "password", value: testVal } });
   expect(wrapper.state().password).toEqual(testVal);

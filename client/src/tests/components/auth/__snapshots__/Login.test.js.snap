@@ -33,17 +33,21 @@ ShallowWrapper {
         <form
           onSubmit={[Function]}
         >
-          <input
-            className=""
+          <TextFieldGroup
+            disabled={false}
+            label="Email"
             name="email"
             onChange={[Function]}
+            placeholder="email"
             type="text"
             value=""
           />
-          <input
-            className=""
+          <TextFieldGroup
+            disabled={false}
+            label="Password"
             name="password"
             onChange={[Function]}
+            placeholder="password"
             type="password"
             value=""
           />
@@ -73,22 +77,24 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <input
-              className=""
+            <TextFieldGroup
+              disabled={false}
+              label="Email"
               name="email"
               onChange={[Function]}
+              placeholder="email"
               type="text"
               value=""
             />,
-            undefined,
-            <input
-              className=""
+            <TextFieldGroup
+              disabled={false}
+              label="Password"
               name="password"
               onChange={[Function]}
+              placeholder="password"
               type="password"
               value=""
             />,
-            undefined,
             <input
               type="submit"
               value="Log In"
@@ -101,35 +107,39 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "className": "",
+              "disabled": false,
+              "error": undefined,
+              "label": "Email",
               "name": "email",
               "onChange": [Function],
+              "placeholder": "email",
               "type": "text",
               "value": "",
             },
             "ref": null,
             "rendered": null,
-            "type": "input",
+            "type": [Function],
           },
-          undefined,
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "className": "",
+              "disabled": false,
+              "error": undefined,
+              "label": "Password",
               "name": "password",
               "onChange": [Function],
+              "placeholder": "password",
               "type": "password",
               "value": "",
             },
             "ref": null,
             "rendered": null,
-            "type": "input",
+            "type": [Function],
           },
-          undefined,
           Object {
             "instance": null,
             "key": undefined,
@@ -161,17 +171,21 @@ ShallowWrapper {
           <form
             onSubmit={[Function]}
           >
-            <input
-              className=""
+            <TextFieldGroup
+              disabled={false}
+              label="Email"
               name="email"
               onChange={[Function]}
+              placeholder="email"
               type="text"
               value=""
             />
-            <input
-              className=""
+            <TextFieldGroup
+              disabled={false}
+              label="Password"
               name="password"
               onChange={[Function]}
+              placeholder="password"
               type="password"
               value=""
             />
@@ -201,22 +215,24 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <input
-                className=""
+              <TextFieldGroup
+                disabled={false}
+                label="Email"
                 name="email"
                 onChange={[Function]}
+                placeholder="email"
                 type="text"
                 value=""
               />,
-              undefined,
-              <input
-                className=""
+              <TextFieldGroup
+                disabled={false}
+                label="Password"
                 name="password"
                 onChange={[Function]}
+                placeholder="password"
                 type="password"
                 value=""
               />,
-              undefined,
               <input
                 type="submit"
                 value="Log In"
@@ -229,35 +245,39 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "className": "",
+                "disabled": false,
+                "error": undefined,
+                "label": "Email",
                 "name": "email",
                 "onChange": [Function],
+                "placeholder": "email",
                 "type": "text",
                 "value": "",
               },
               "ref": null,
               "rendered": null,
-              "type": "input",
+              "type": [Function],
             },
-            undefined,
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "function",
               "props": Object {
-                "className": "",
+                "disabled": false,
+                "error": undefined,
+                "label": "Password",
                 "name": "password",
                 "onChange": [Function],
+                "placeholder": "password",
                 "type": "password",
                 "value": "",
               },
               "ref": null,
               "rendered": null,
-              "type": "input",
+              "type": [Function],
             },
-            undefined,
             Object {
               "instance": null,
               "key": undefined,

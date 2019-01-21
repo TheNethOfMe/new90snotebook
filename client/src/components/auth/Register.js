@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import classnames from "classnames";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 export class Register extends Component {
   constructor() {
@@ -43,30 +43,34 @@ export class Register extends Component {
       <div>
         <h1>Register</h1>
         <form noValidate onSubmit={this.onSubmit}>
-          <input
-            type="email"
-            className={classnames({ "invalid-input": errors.email })}
+          <TextFieldGroup
             name="email"
+            placeholder="email"
             value={this.state.email}
+            type="email"
+            label="Enter Email: "
+            error={errors.email}
             onChange={this.onChange}
           />
-          {errors.email && <div>{errors.email}</div>}
-          <input
-            type="password"
-            className={classnames({ "invalid-input": errors.password })}
+          <TextFieldGroup
             name="password"
+            placeholder="password"
             value={this.state.password}
-            onChange={this.onChange}
-          />
-          {errors.password && <div>{errors.password}</div>}
-          <input
             type="password"
-            className={classnames({ "invalid-input": errors.password2 })}
-            name="password2"
-            value={this.state.password2}
+            label="Enter Password: "
+            error={errors.password}
             onChange={this.onChange}
           />
-          {errors.password2 && <div>{errors.password2}</div>}
+          <TextFieldGroup
+            name="password2"
+            placeholder="password2"
+            value={this.state.password2}
+            type="password"
+            label="Confirm Password: "
+            error={errors.password2}
+            onChange={this.onChange}
+          />
+
           <input type="submit" value="Sign Up" />
         </form>
       </div>
