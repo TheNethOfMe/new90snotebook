@@ -10,6 +10,7 @@ ShallowWrapper {
         "user": Object {},
       }
     }
+    clearCurrentProfile={[MockFunction]}
     logoutUser={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -54,7 +55,6 @@ ShallowWrapper {
           <li>
             <div
               className="header__nav-item"
-              href="#"
               onClick={[Function]}
             >
               <p>
@@ -97,7 +97,6 @@ ShallowWrapper {
           <li>
             <div
               className="header__nav-item"
-              href="#"
               onClick={[Function]}
             >
               <p>
@@ -140,7 +139,6 @@ ShallowWrapper {
             <li>
               <div
                 className="header__nav-item"
-                href="#"
                 onClick={[Function]}
               >
                 <p>
@@ -247,7 +245,6 @@ ShallowWrapper {
             "props": Object {
               "children": <div
                 className="header__nav-item"
-                href="#"
                 onClick={[Function]}
               >
                 <p>
@@ -265,7 +262,6 @@ ShallowWrapper {
                   Logout
                 </p>,
                 "className": "header__nav-item",
-                "href": "#",
                 "onClick": [Function],
               },
               "ref": null,
@@ -326,7 +322,6 @@ ShallowWrapper {
             <li>
               <div
                 className="header__nav-item"
-                href="#"
                 onClick={[Function]}
               >
                 <p>
@@ -369,7 +364,6 @@ ShallowWrapper {
             <li>
               <div
                 className="header__nav-item"
-                href="#"
                 onClick={[Function]}
               >
                 <p>
@@ -412,7 +406,6 @@ ShallowWrapper {
               <li>
                 <div
                   className="header__nav-item"
-                  href="#"
                   onClick={[Function]}
                 >
                   <p>
@@ -519,7 +512,6 @@ ShallowWrapper {
               "props": Object {
                 "children": <div
                   className="header__nav-item"
-                  href="#"
                   onClick={[Function]}
                 >
                   <p>
@@ -537,7 +529,6 @@ ShallowWrapper {
                     Logout
                   </p>,
                   "className": "header__nav-item",
-                  "href": "#",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -594,6 +585,7 @@ ShallowWrapper {
         "user": Object {},
       }
     }
+    clearCurrentProfile={[MockFunction]}
     logoutUser={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
