@@ -1,3 +1,7 @@
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
+import mockAxios from "jest-mock-axios";
+
 import {
   setCurrentUser,
   registerUser,
@@ -5,9 +9,6 @@ import {
   logoutUser
 } from "../../actions/authActions";
 import { fakeNewUser, fakeExistingUser } from "../dummyData";
-import configureMockStore from "redux-mock-store";
-import thunk from "redux-thunk";
-import mockAxios from "jest-mock-axios";
 
 import { SET_CURRENT_USER } from "../../actions/types";
 

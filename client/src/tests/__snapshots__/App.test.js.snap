@@ -37,6 +37,11 @@ ShallowWrapper {
             exact={true}
             path="/register"
           />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/dashboard"
+          />
           <_default />
         </div>
       </BrowserRouter>,
@@ -73,6 +78,11 @@ ShallowWrapper {
             exact={true}
             path="/register"
           />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/dashboard"
+          />
           <_default />
         </div>,
       },
@@ -98,6 +108,11 @@ ShallowWrapper {
               component={[Function]}
               exact={true}
               path="/register"
+            />,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/dashboard"
             />,
             <_default />,
           ],
@@ -156,6 +171,19 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/dashboard",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
             "nodeType": "function",
             "props": Object {},
             "ref": null,
@@ -195,6 +223,11 @@ ShallowWrapper {
               exact={true}
               path="/register"
             />
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/dashboard"
+            />
             <_default />
           </div>
         </BrowserRouter>,
@@ -231,6 +264,11 @@ ShallowWrapper {
               exact={true}
               path="/register"
             />
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/dashboard"
+            />
             <_default />
           </div>,
         },
@@ -256,6 +294,11 @@ ShallowWrapper {
                 component={[Function]}
                 exact={true}
                 path="/register"
+              />,
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/dashboard"
               />,
               <_default />,
             ],
@@ -306,6 +349,19 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/register",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/dashboard",
               },
               "ref": null,
               "rendered": null,

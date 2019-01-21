@@ -6,11 +6,11 @@ import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
 
 export class Navbar extends Component {
-  onLogoutClick(e) {
+  onLogoutClick = e => {
     e.preventDefault();
     this.props.clearCurrentProfile();
     this.props.logoutUser();
-  }
+  };
   render() {
     const { isAuthenticated } = this.props.auth;
 
@@ -27,11 +27,7 @@ export class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <div
-            href="#"
-            className="header__nav-item"
-            onClick={this.onLogoutClick.bind(this)}
-          >
+          <div className="header__nav-item" onClick={this.onLogoutClick}>
             <p>Logout</p>
           </div>
         </li>

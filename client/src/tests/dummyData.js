@@ -16,3 +16,15 @@ export const fakeError = {
     data: "You did a bad!"
   }
 };
+
+// Profile
+export const fakeUserProfile = {
+  user: fakeExistingUser,
+  firstName: "Sparky",
+  lastName: "McSparkerton",
+  nickName: "The Spark",
+  theme: "paper-cup",
+  blacklist: [],
+  searchableProfile: true,
+  screenName: "Sparkster"
+};
