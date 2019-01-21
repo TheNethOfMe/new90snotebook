@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 export class Login extends Component {
   constructor() {
@@ -44,22 +44,23 @@ export class Login extends Component {
       <div>
         <h1>Login</h1>
         <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            className={classnames({ "invalid-input": errors.email })}
+          <TextFieldGroup
             name="email"
+            placeholder="email"
             value={this.state.email}
+            label="Email"
+            error={errors.email}
             onChange={this.onChange}
           />
-          {errors.email && <div>{errors.email}</div>}
-          <input
-            type="password"
-            className={classnames({ "invalid-input": errors.password })}
+          <TextFieldGroup
             name="password"
+            placeholder="password"
             value={this.state.password}
+            type="password"
+            label="Password"
+            error={errors.password}
             onChange={this.onChange}
           />
-          {errors.password && <div>{errors.password}</div>}
           <input type="submit" value="Log In" />
         </form>
       </div>
