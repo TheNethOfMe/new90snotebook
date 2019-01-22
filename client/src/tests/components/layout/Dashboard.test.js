@@ -6,7 +6,9 @@ let wrapper, getCurrentProfile;
 
 beforeEach(() => {
   getCurrentProfile = jest.fn();
-  wrapper = shallow(<Dashboard getCurrentProfile={getCurrentProfile} />);
+  wrapper = shallow(
+    <Dashboard getCurrentProfile={getCurrentProfile} auth={{}} profile={{}} />
+  );
 });
 
 test("should render Dashboard component", () => {
