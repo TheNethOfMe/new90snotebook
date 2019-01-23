@@ -1,6 +1,13 @@
 @import "./vendor/reset";
+@import "./vendor/fonts";
 @import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 
 @import "./base/variables";
+@import "./base/theme-mixins";
 
 @import "./components/primary";
+@import "./components/header";
+@import "./components/landing";
+@import "./components/forminputs";
+
+@import "./themes/papercup";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -7,6 +7,7 @@ import { clearCurrentProfile } from "./actions/profileActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
+import NoAuthRoute from "./components/routers/NoAuthRoute";
 import PrivateRoute from "./components/routers/PrivateRoute";
 
 import Navbar from "./components/layout/Navbar";
@@ -42,9 +43,11 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <Switch>
+              <NoAuthRoute exact path="/" component={Landing} />
+              <NoAuthRoute exact path="/login" component={Login} />
+              <NoAuthRoute exact path="/register" component={Register} />
+            </Switch>
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

@@ -1,0 +1,34 @@
+.header__nav {
+  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      padding: 15px;
+    }
+  }
+}
+
+.header__nav-item {
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-decoration: none;
+  &:visited {
+    color: #ccc;
+  }
+  &:hover {
+    color: #ebfc26;
+    text-shadow: 1px 1px 2px #ebfc26;
+  }
+}
+
+.header__nav-icon {
+  margin: 0 auto;
+  width: 2rem;
+}
