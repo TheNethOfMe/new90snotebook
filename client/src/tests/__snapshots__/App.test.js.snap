@@ -22,26 +22,30 @@ ShallowWrapper {
           className="App"
         >
           <Connect(Navbar) />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/login"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/register"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/dashboard"
-          />
+          <Switch>
+            <Connect(NoAuthRoute)
+              component={[Function]}
+              exact={true}
+              path="/"
+            />
+            <Connect(NoAuthRoute)
+              component={[Function]}
+              exact={true}
+              path="/login"
+            />
+            <Connect(NoAuthRoute)
+              component={[Function]}
+              exact={true}
+              path="/register"
+            />
+          </Switch>
+          <Switch>
+            <Connect(PrivateRoute)
+              component={[Function]}
+              exact={true}
+              path="/dashboard"
+            />
+          </Switch>
           <_default />
         </div>
       </BrowserRouter>,
@@ -63,26 +67,30 @@ ShallowWrapper {
           className="App"
         >
           <Connect(Navbar) />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/login"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/register"
-          />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/dashboard"
-          />
+          <Switch>
+            <Connect(NoAuthRoute)
+              component={[Function]}
+              exact={true}
+              path="/"
+            />
+            <Connect(NoAuthRoute)
+              component={[Function]}
+              exact={true}
+              path="/login"
+            />
+            <Connect(NoAuthRoute)
+              component={[Function]}
+              exact={true}
+              path="/register"
+            />
+          </Switch>
+          <Switch>
+            <Connect(PrivateRoute)
+              component={[Function]}
+              exact={true}
+              path="/dashboard"
+            />
+          </Switch>
           <_default />
         </div>,
       },
@@ -94,26 +102,30 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Connect(Navbar) />,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-            />,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/login"
-            />,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/register"
-            />,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/dashboard"
-            />,
+            <Switch>
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/"
+              />
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/login"
+              />
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/register"
+              />
+            </Switch>,
+            <Switch>
+              <Connect(PrivateRoute)
+                component={[Function]}
+                exact={true}
+                path="/dashboard"
+              />
+            </Switch>,
             <_default />,
           ],
           "className": "App",
@@ -134,12 +146,66 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/",
+              "children": Array [
+                <Connect(NoAuthRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />,
+                <Connect(NoAuthRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/login"
+                />,
+                <Connect(NoAuthRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/register"
+                />,
+              ],
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "exact": true,
+                  "path": "/",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "exact": true,
+                  "path": "/login",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "exact": true,
+                  "path": "/register",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
             "type": [Function],
           },
           Object {
@@ -147,38 +213,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/login",
+              "children": <Connect(PrivateRoute)
+                component={[Function]}
+                exact={true}
+                path="/dashboard"
+              />,
             },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/register",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "component": [Function],
+                "exact": true,
+                "path": "/dashboard",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/dashboard",
-            },
-            "ref": null,
-            "rendered": null,
             "type": [Function],
           },
           Object {
@@ -208,26 +262,30 @@ ShallowWrapper {
             className="App"
           >
             <Connect(Navbar) />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/login"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/register"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/dashboard"
-            />
+            <Switch>
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/"
+              />
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/login"
+              />
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/register"
+              />
+            </Switch>
+            <Switch>
+              <Connect(PrivateRoute)
+                component={[Function]}
+                exact={true}
+                path="/dashboard"
+              />
+            </Switch>
             <_default />
           </div>
         </BrowserRouter>,
@@ -249,26 +307,30 @@ ShallowWrapper {
             className="App"
           >
             <Connect(Navbar) />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/login"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/register"
-            />
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/dashboard"
-            />
+            <Switch>
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/"
+              />
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/login"
+              />
+              <Connect(NoAuthRoute)
+                component={[Function]}
+                exact={true}
+                path="/register"
+              />
+            </Switch>
+            <Switch>
+              <Connect(PrivateRoute)
+                component={[Function]}
+                exact={true}
+                path="/dashboard"
+              />
+            </Switch>
             <_default />
           </div>,
         },
@@ -280,26 +342,30 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Connect(Navbar) />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/login"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/register"
-              />,
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/dashboard"
-              />,
+              <Switch>
+                <Connect(NoAuthRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Connect(NoAuthRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/login"
+                />
+                <Connect(NoAuthRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/register"
+                />
+              </Switch>,
+              <Switch>
+                <Connect(PrivateRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/dashboard"
+                />
+              </Switch>,
               <_default />,
             ],
             "className": "App",
@@ -320,12 +386,66 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/",
+                "children": Array [
+                  <Connect(NoAuthRoute)
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />,
+                  <Connect(NoAuthRoute)
+                    component={[Function]}
+                    exact={true}
+                    path="/login"
+                  />,
+                  <Connect(NoAuthRoute)
+                    component={[Function]}
+                    exact={true}
+                    path="/register"
+                  />,
+                ],
               },
               "ref": null,
-              "rendered": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": true,
+                    "path": "/",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": true,
+                    "path": "/login",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "component": [Function],
+                    "exact": true,
+                    "path": "/register",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
               "type": [Function],
             },
             Object {
@@ -333,38 +453,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/login",
+                "children": <Connect(PrivateRoute)
+                  component={[Function]}
+                  exact={true}
+                  path="/dashboard"
+                />,
               },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/register",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "component": [Function],
+                  "exact": true,
+                  "path": "/dashboard",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/dashboard",
-              },
-              "ref": null,
-              "rendered": null,
               "type": [Function],
             },
             Object {

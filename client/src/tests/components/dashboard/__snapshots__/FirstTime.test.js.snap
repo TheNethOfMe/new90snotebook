@@ -1,16 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render the text field 1`] = `
+exports[`should render FirstTime component 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TextFieldGroup
-    disabled={false}
-    label="Email"
-    name="email"
-    onChange={[MockFunction]}
-    placeholder="email"
-    type="text"
-    value=""
+  Symbol(enzyme.__unrendered__): <FirstTime
+    createNewProfile={[MockFunction]}
+    errors={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -26,25 +21,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <label
-          className="input__label"
-          htmlFor="email"
-        >
-          Email
-        </label>,
-        <input
-          className="input__field"
-          disabled={false}
-          name="email"
-          onChange={[MockFunction]}
-          placeholder="email"
-          type="text"
-          value=""
+        <h1>
+          Profile Setup
+        </h1>,
+        <ProfileForm
+          errors={Object {}}
+          handleSubmit={[Function]}
+          profile={null}
         />,
-        undefined,
-        undefined,
       ],
-      "className": "input",
     },
     "ref": null,
     "rendered": Array [
@@ -53,33 +38,25 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Email",
-          "className": "input__label",
-          "htmlFor": "email",
+          "children": "Profile Setup",
         },
         "ref": null,
-        "rendered": "Email",
-        "type": "label",
+        "rendered": "Profile Setup",
+        "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "className": "input__field",
-          "disabled": false,
-          "name": "email",
-          "onChange": [MockFunction],
-          "placeholder": "email",
-          "type": "text",
-          "value": "",
+          "errors": Object {},
+          "handleSubmit": [Function],
+          "profile": null,
         },
         "ref": null,
         "rendered": null,
-        "type": "input",
+        "type": [Function],
       },
-      undefined,
-      undefined,
     ],
     "type": "div",
   },
@@ -90,25 +67,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <label
-            className="input__label"
-            htmlFor="email"
-          >
-            Email
-          </label>,
-          <input
-            className="input__field"
-            disabled={false}
-            name="email"
-            onChange={[MockFunction]}
-            placeholder="email"
-            type="text"
-            value=""
+          <h1>
+            Profile Setup
+          </h1>,
+          <ProfileForm
+            errors={Object {}}
+            handleSubmit={[Function]}
+            profile={null}
           />,
-          undefined,
-          undefined,
         ],
-        "className": "input",
       },
       "ref": null,
       "rendered": Array [
@@ -117,33 +84,25 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Email",
-            "className": "input__label",
-            "htmlFor": "email",
+            "children": "Profile Setup",
           },
           "ref": null,
-          "rendered": "Email",
-          "type": "label",
+          "rendered": "Profile Setup",
+          "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "className": "input__field",
-            "disabled": false,
-            "name": "email",
-            "onChange": [MockFunction],
-            "placeholder": "email",
-            "type": "text",
-            "value": "",
+            "errors": Object {},
+            "handleSubmit": [Function],
+            "profile": null,
           },
           "ref": null,
           "rendered": null,
-          "type": "input",
+          "type": [Function],
         },
-        undefined,
-        undefined,
       ],
       "type": "div",
     },

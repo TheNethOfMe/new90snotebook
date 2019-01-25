@@ -27,10 +27,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        className="noauth__form"
+      >
         <h1>
           Register
-        </h1>,
+        </h1>
         <form
           noValidate={true}
           onSubmit={[Function]}
@@ -63,142 +65,16 @@ ShallowWrapper {
             value=""
           />
           <input
+            className="input__submit"
             type="submit"
             value="Sign Up"
           />
-        </form>,
-      ],
+        </form>
+      </div>,
+      "className": "noauth__subheading",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Register",
-        },
-        "ref": null,
-        "rendered": "Register",
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <TextFieldGroup
-              disabled={false}
-              label="Enter Email: "
-              name="email"
-              onChange={[Function]}
-              placeholder="email"
-              type="email"
-              value=""
-            />,
-            <TextFieldGroup
-              disabled={false}
-              label="Enter Password: "
-              name="password"
-              onChange={[Function]}
-              placeholder="password"
-              type="password"
-              value=""
-            />,
-            <TextFieldGroup
-              disabled={false}
-              label="Confirm Password: "
-              name="password2"
-              onChange={[Function]}
-              placeholder="password2"
-              type="password"
-              value=""
-            />,
-            <input
-              type="submit"
-              value="Sign Up"
-            />,
-          ],
-          "noValidate": true,
-          "onSubmit": [Function],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "disabled": false,
-              "error": undefined,
-              "label": "Enter Email: ",
-              "name": "email",
-              "onChange": [Function],
-              "placeholder": "email",
-              "type": "email",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "disabled": false,
-              "error": undefined,
-              "label": "Enter Password: ",
-              "name": "password",
-              "onChange": [Function],
-              "placeholder": "password",
-              "type": "password",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "disabled": false,
-              "error": undefined,
-              "label": "Confirm Password: ",
-              "name": "password2",
-              "onChange": [Function],
-              "placeholder": "password2",
-              "type": "password",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "type": "submit",
-              "value": "Sign Up",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-        ],
-        "type": "form",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -239,11 +115,13 @@ ShallowWrapper {
               value=""
             />
             <input
+              className="input__submit"
               type="submit"
               value="Sign Up"
             />
           </form>,
         ],
+        "className": "noauth__form",
       },
       "ref": null,
       "rendered": Array [
@@ -292,6 +170,7 @@ ShallowWrapper {
                 value=""
               />,
               <input
+                className="input__submit"
                 type="submit"
                 value="Sign Up"
               />,
@@ -360,6 +239,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "input__submit",
                 "type": "submit",
                 "value": "Sign Up",
               },
@@ -371,6 +251,242 @@ ShallowWrapper {
           "type": "form",
         },
       ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="noauth__form"
+        >
+          <h1>
+            Register
+          </h1>
+          <form
+            noValidate={true}
+            onSubmit={[Function]}
+          >
+            <TextFieldGroup
+              disabled={false}
+              label="Enter Email: "
+              name="email"
+              onChange={[Function]}
+              placeholder="email"
+              type="email"
+              value=""
+            />
+            <TextFieldGroup
+              disabled={false}
+              label="Enter Password: "
+              name="password"
+              onChange={[Function]}
+              placeholder="password"
+              type="password"
+              value=""
+            />
+            <TextFieldGroup
+              disabled={false}
+              label="Confirm Password: "
+              name="password2"
+              onChange={[Function]}
+              placeholder="password2"
+              type="password"
+              value=""
+            />
+            <input
+              className="input__submit"
+              type="submit"
+              value="Sign Up"
+            />
+          </form>
+        </div>,
+        "className": "noauth__subheading",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1>
+              Register
+            </h1>,
+            <form
+              noValidate={true}
+              onSubmit={[Function]}
+            >
+              <TextFieldGroup
+                disabled={false}
+                label="Enter Email: "
+                name="email"
+                onChange={[Function]}
+                placeholder="email"
+                type="email"
+                value=""
+              />
+              <TextFieldGroup
+                disabled={false}
+                label="Enter Password: "
+                name="password"
+                onChange={[Function]}
+                placeholder="password"
+                type="password"
+                value=""
+              />
+              <TextFieldGroup
+                disabled={false}
+                label="Confirm Password: "
+                name="password2"
+                onChange={[Function]}
+                placeholder="password2"
+                type="password"
+                value=""
+              />
+              <input
+                className="input__submit"
+                type="submit"
+                value="Sign Up"
+              />
+            </form>,
+          ],
+          "className": "noauth__form",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Register",
+            },
+            "ref": null,
+            "rendered": "Register",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <TextFieldGroup
+                  disabled={false}
+                  label="Enter Email: "
+                  name="email"
+                  onChange={[Function]}
+                  placeholder="email"
+                  type="email"
+                  value=""
+                />,
+                <TextFieldGroup
+                  disabled={false}
+                  label="Enter Password: "
+                  name="password"
+                  onChange={[Function]}
+                  placeholder="password"
+                  type="password"
+                  value=""
+                />,
+                <TextFieldGroup
+                  disabled={false}
+                  label="Confirm Password: "
+                  name="password2"
+                  onChange={[Function]}
+                  placeholder="password2"
+                  type="password"
+                  value=""
+                />,
+                <input
+                  className="input__submit"
+                  type="submit"
+                  value="Sign Up"
+                />,
+              ],
+              "noValidate": true,
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "disabled": false,
+                  "error": undefined,
+                  "label": "Enter Email: ",
+                  "name": "email",
+                  "onChange": [Function],
+                  "placeholder": "email",
+                  "type": "email",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "disabled": false,
+                  "error": undefined,
+                  "label": "Enter Password: ",
+                  "name": "password",
+                  "onChange": [Function],
+                  "placeholder": "password",
+                  "type": "password",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "disabled": false,
+                  "error": undefined,
+                  "label": "Confirm Password: ",
+                  "name": "password2",
+                  "onChange": [Function],
+                  "placeholder": "password2",
+                  "type": "password",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "input__submit",
+                  "type": "submit",
+                  "value": "Sign Up",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "form",
+          },
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],

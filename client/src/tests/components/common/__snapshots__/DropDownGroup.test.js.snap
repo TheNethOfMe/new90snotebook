@@ -1,16 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render the text field 1`] = `
+exports[`should render the select drop-down 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TextFieldGroup
+  Symbol(enzyme.__unrendered__): <DropDownGroup
     disabled={false}
     label="Email"
     name="email"
     onChange={[MockFunction]}
-    placeholder="email"
+    options={
+      Array [
+        Object {
+          "display": "Option One",
+          "val": "one",
+        },
+        Object {
+          "display": "Option Two",
+          "val": "two",
+        },
+      ]
+    }
     type="text"
-    value=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -32,15 +42,23 @@ ShallowWrapper {
         >
           Email
         </label>,
-        <input
-          className="input__field"
+        <select
+          className="select__field"
           disabled={false}
           name="email"
           onChange={[MockFunction]}
-          placeholder="email"
-          type="text"
-          value=""
-        />,
+        >
+          <option
+            value="one"
+          >
+            Option One
+          </option>
+          <option
+            value="two"
+          >
+            Option Two
+          </option>
+        </select>,
         undefined,
         undefined,
       ],
@@ -66,17 +84,51 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "input__field",
+          "children": Array [
+            <option
+              value="one"
+            >
+              Option One
+            </option>,
+            <option
+              value="two"
+            >
+              Option Two
+            </option>,
+          ],
+          "className": "select__field",
           "disabled": false,
           "name": "email",
           "onChange": [MockFunction],
-          "placeholder": "email",
-          "type": "text",
-          "value": "",
         },
         "ref": null,
-        "rendered": null,
-        "type": "input",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "one",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Option One",
+              "value": "one",
+            },
+            "ref": null,
+            "rendered": "Option One",
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "two",
+            "nodeType": "host",
+            "props": Object {
+              "children": "Option Two",
+              "value": "two",
+            },
+            "ref": null,
+            "rendered": "Option Two",
+            "type": "option",
+          },
+        ],
+        "type": "select",
       },
       undefined,
       undefined,
@@ -96,15 +148,23 @@ ShallowWrapper {
           >
             Email
           </label>,
-          <input
-            className="input__field"
+          <select
+            className="select__field"
             disabled={false}
             name="email"
             onChange={[MockFunction]}
-            placeholder="email"
-            type="text"
-            value=""
-          />,
+          >
+            <option
+              value="one"
+            >
+              Option One
+            </option>
+            <option
+              value="two"
+            >
+              Option Two
+            </option>
+          </select>,
           undefined,
           undefined,
         ],
@@ -130,17 +190,51 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "input__field",
+            "children": Array [
+              <option
+                value="one"
+              >
+                Option One
+              </option>,
+              <option
+                value="two"
+              >
+                Option Two
+              </option>,
+            ],
+            "className": "select__field",
             "disabled": false,
             "name": "email",
             "onChange": [MockFunction],
-            "placeholder": "email",
-            "type": "text",
-            "value": "",
           },
           "ref": null,
-          "rendered": null,
-          "type": "input",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "one",
+              "nodeType": "host",
+              "props": Object {
+                "children": "Option One",
+                "value": "one",
+              },
+              "ref": null,
+              "rendered": "Option One",
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "two",
+              "nodeType": "host",
+              "props": Object {
+                "children": "Option Two",
+                "value": "two",
+              },
+              "ref": null,
+              "rendered": "Option Two",
+              "type": "option",
+            },
+          ],
+          "type": "select",
         },
         undefined,
         undefined,

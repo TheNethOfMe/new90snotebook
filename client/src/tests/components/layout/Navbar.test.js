@@ -16,10 +16,11 @@ test("should render the Navbar component", () => {
       clearCurrentProfile={clearCurrentProfile}
       logoutUser={logoutUser}
       auth={auth}
+      theme="test-theme"
     />
   );
   expect(wrapper).toMatchSnapshot();
-  expect(wrapper.find("li").length).toEqual(2);
+  expect(wrapper.find("li").length).toEqual(3);
 });
 
 test("should render component when a user is logged in", () => {
@@ -29,10 +30,11 @@ test("should render component when a user is logged in", () => {
       clearCurrentProfile={clearCurrentProfile}
       logoutUser={logoutUser}
       auth={auth}
+      theme="test-theme"
     />
   );
   expect(wrapper).toMatchSnapshot();
-  expect(wrapper.find("li").length).toEqual(3);
+  expect(wrapper.find("li").length).toEqual(4);
 });
 
 test("should logout user on logout click", () => {
@@ -42,11 +44,12 @@ test("should logout user on logout click", () => {
       clearCurrentProfile={clearCurrentProfile}
       logoutUser={logoutUser}
       auth={auth}
+      theme="test-theme"
     />
   );
   wrapper
     .find(".header__nav-item")
-    .at(2)
+    .at(3)
     .simulate("click", { preventDefault: () => {} });
   expect(clearCurrentProfile).toHaveBeenCalled();
   expect(logoutUser).toHaveBeenCalled();
