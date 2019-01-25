@@ -26,10 +26,6 @@ const ProfileSchema = new Schema({
     type: Boolean,
     default: false
   },
-  screenName: {
-    type: String,
-    required: true
-  },
   menuToggle: {
     type: Boolean,
     default: true

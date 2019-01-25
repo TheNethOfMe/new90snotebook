@@ -39,7 +39,6 @@ export class Login extends Component {
   };
   render() {
     const { errors } = this.state;
-
     return (
       <div className="noauth__subheading">
         <h1>Login</h1>

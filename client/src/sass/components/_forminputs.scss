@@ -1,5 +1,6 @@
 .default-form-styles {
-  margin: 0 auto;
+  font-size: 1.5em;
+  margin: 5px auto;
   width: 100%;
 }
 
@@ -14,12 +15,18 @@ form {
   width: 95%;
 }
 
-.input__Label {
+.input__label {
   font-weight: bold;
 }
 
 .input__field {
   @extend .default-form-styles;
+}
+
+.select__field {
+  @extend .default-form-styles;
+  display: block;
+  width: 80%;
 }
 
 .input__submit {
@@ -29,6 +36,9 @@ form {
   margin: 5px auto;
   padding: 3px 0;
   width: 80%;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .input__info {

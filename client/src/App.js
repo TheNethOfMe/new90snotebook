@@ -17,7 +17,7 @@ import Footer from "./components/layout/Footer";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
-import Dashboard from "./components/layout/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 
 import "./sass/main.scss";
 
