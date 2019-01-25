@@ -12,6 +12,7 @@ ShallowWrapper {
     }
     clearCurrentProfile={[MockFunction]}
     logoutUser={[MockFunction]}
+    theme="test-theme"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -29,40 +30,78 @@ ShallowWrapper {
       "children": <nav
         className="header__nav"
       >
-        <ul>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/dashboard"
-            >
-              <p>
-                Menu
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/register"
-            >
-              <p>
-                Settings
-              </p>
-            </Link>
-          </li>
-          <li>
-            <div
-              className="header__nav-item"
-              onClick={[Function]}
-            >
-              <p>
-                Logout
-              </p>
-            </div>
-          </li>
-        </ul>
+        <div
+          className="header__nav-section"
+        >
+          <ul>
+            <li>
+              <Link
+                className="header__nav-item"
+                replace={false}
+                to="/"
+              >
+                <p>
+                  My 90s Notebook
+                </p>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="header__nav-section"
+        >
+          <ul
+            className="header__nav-list"
+          >
+            <li>
+              <Link
+                className="header__nav-item"
+                replace={false}
+                to="/dashboard"
+              >
+                <img
+                  alt="menu-icon"
+                  className="header__nav-icon"
+                  src="/images/themes/test-theme/menu-icon.png"
+                />
+                <p>
+                  Menu
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="header__nav-item"
+                replace={false}
+                to="/dashboard"
+              >
+                <img
+                  alt="settings-icon"
+                  className="header__nav-icon"
+                  src="/images/themes/test-theme/settings-icon.png"
+                />
+                <p>
+                  Settings
+                </p>
+              </Link>
+            </li>
+            <li>
+              <div
+                className="header__nav-item"
+                onClick={[Function]}
+              >
+                <img
+                  alt="logout-icon"
+                  className="header__nav-icon"
+                  src="/images/themes/test-theme/logout-icon.png"
+                />
+                <p>
+                  Logout
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </nav>,
     },
     "ref": null,
@@ -71,186 +110,121 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <ul>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/dashboard"
+        "children": Array [
+          <div
+            className="header__nav-section"
+          >
+            <ul>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>,
+          <div
+            className="header__nav-section"
+          >
+            <ul
+              className="header__nav-list"
             >
-              <p>
-                Menu
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/register"
-            >
-              <p>
-                Settings
-              </p>
-            </Link>
-          </li>
-          <li>
-            <div
-              className="header__nav-item"
-              onClick={[Function]}
-            >
-              <p>
-                Logout
-              </p>
-            </div>
-          </li>
-        </ul>,
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/dashboard"
+                >
+                  <img
+                    alt="menu-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/menu-icon.png"
+                  />
+                  <p>
+                    Menu
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/dashboard"
+                >
+                  <img
+                    alt="settings-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/settings-icon.png"
+                  />
+                  <p>
+                    Settings
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <div
+                  className="header__nav-item"
+                  onClick={[Function]}
+                >
+                  <img
+                    alt="logout-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/logout-icon.png"
+                  />
+                  <p>
+                    Logout
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>,
+        ],
         "className": "header__nav",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/dashboard"
-              >
-                <p>
-                  Menu
-                </p>
-              </Link>
-            </li>,
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Settings
-                </p>
-              </Link>
-            </li>,
-            <li>
-              <div
-                className="header__nav-item"
-                onClick={[Function]}
-              >
-                <p>
-                  Logout
-                </p>
-              </div>
-            </li>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                className="header__nav-item"
-                replace={false}
-                to="/dashboard"
-              >
-                <p>
-                  Menu
-                </p>
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <p>
-                  Menu
-                </p>,
-                "className": "header__nav-item",
-                "replace": false,
-                "to": "/dashboard",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Menu",
-                },
-                "ref": null,
-                "rendered": "Menu",
-                "type": "p",
-              },
-              "type": [Function],
-            },
-            "type": "li",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>
+            </ul>,
+            "className": "header__nav-section",
           },
-          Object {
+          "ref": null,
+          "rendered": Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Settings
-                </p>
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <p>
-                  Settings
-                </p>,
-                "className": "header__nav-item",
-                "replace": false,
-                "to": "/register",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Settings",
-                },
-                "ref": null,
-                "rendered": "Settings",
-                "type": "p",
-              },
-              "type": [Function],
-            },
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <div
-                className="header__nav-item"
-                onClick={[Function]}
-              >
-                <p>
-                  Logout
-                </p>
-              </div>,
+              "children": <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>,
             },
             "ref": null,
             "rendered": Object {
@@ -258,31 +232,383 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <p>
-                  Logout
-                </p>,
-                "className": "header__nav-item",
-                "onClick": [Function],
+                "children": <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>,
               },
               "ref": null,
               "rendered": Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": "Logout",
+                  "children": <p>
+                    My 90s Notebook
+                  </p>,
+                  "className": "header__nav-item",
+                  "replace": false,
+                  "to": "/",
                 },
                 "ref": null,
-                "rendered": "Logout",
-                "type": "p",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "My 90s Notebook",
+                  },
+                  "ref": null,
+                  "rendered": "My 90s Notebook",
+                  "type": "p",
+                },
+                "type": [Function],
               },
-              "type": "div",
+              "type": "li",
             },
-            "type": "li",
+            "type": "ul",
           },
-        ],
-        "type": "ul",
-      },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="header__nav-list"
+            >
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/dashboard"
+                >
+                  <img
+                    alt="menu-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/menu-icon.png"
+                  />
+                  <p>
+                    Menu
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/dashboard"
+                >
+                  <img
+                    alt="settings-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/settings-icon.png"
+                  />
+                  <p>
+                    Settings
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <div
+                  className="header__nav-item"
+                  onClick={[Function]}
+                >
+                  <img
+                    alt="logout-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/logout-icon.png"
+                  />
+                  <p>
+                    Logout
+                  </p>
+                </div>
+              </li>
+            </ul>,
+            "className": "header__nav-section",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="menu-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/menu-icon.png"
+                    />
+                    <p>
+                      Menu
+                    </p>
+                  </Link>
+                </li>,
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="settings-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/settings-icon.png"
+                    />
+                    <p>
+                      Settings
+                    </p>
+                  </Link>
+                </li>,
+                <li>
+                  <div
+                    className="header__nav-item"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="logout-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/logout-icon.png"
+                    />
+                    <p>
+                      Logout
+                    </p>
+                  </div>
+                </li>,
+              ],
+              "className": "header__nav-list",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="menu-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/menu-icon.png"
+                    />
+                    <p>
+                      Menu
+                    </p>
+                  </Link>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <img
+                        alt="menu-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/menu-icon.png"
+                      />,
+                      <p>
+                        Menu
+                      </p>,
+                    ],
+                    "className": "header__nav-item",
+                    "replace": false,
+                    "to": "/dashboard",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "alt": "menu-icon",
+                        "className": "header__nav-icon",
+                        "src": "/images/themes/test-theme/menu-icon.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Menu",
+                      },
+                      "ref": null,
+                      "rendered": "Menu",
+                      "type": "p",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="settings-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/settings-icon.png"
+                    />
+                    <p>
+                      Settings
+                    </p>
+                  </Link>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <img
+                        alt="settings-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/settings-icon.png"
+                      />,
+                      <p>
+                        Settings
+                      </p>,
+                    ],
+                    "className": "header__nav-item",
+                    "replace": false,
+                    "to": "/dashboard",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "alt": "settings-icon",
+                        "className": "header__nav-icon",
+                        "src": "/images/themes/test-theme/settings-icon.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Settings",
+                      },
+                      "ref": null,
+                      "rendered": "Settings",
+                      "type": "p",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="header__nav-item"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="logout-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/logout-icon.png"
+                    />
+                    <p>
+                      Logout
+                    </p>
+                  </div>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <img
+                        alt="logout-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/logout-icon.png"
+                      />,
+                      <p>
+                        Logout
+                      </p>,
+                    ],
+                    "className": "header__nav-item",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "alt": "logout-icon",
+                        "className": "header__nav-icon",
+                        "src": "/images/themes/test-theme/logout-icon.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Logout",
+                      },
+                      "ref": null,
+                      "rendered": "Logout",
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "li",
+              },
+            ],
+            "type": "ul",
+          },
+          "type": "div",
+        },
+      ],
       "type": "nav",
     },
     "type": "div",
@@ -296,40 +622,78 @@ ShallowWrapper {
         "children": <nav
           className="header__nav"
         >
-          <ul>
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/dashboard"
-              >
-                <p>
-                  Menu
-                </p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Settings
-                </p>
-              </Link>
-            </li>
-            <li>
-              <div
-                className="header__nav-item"
-                onClick={[Function]}
-              >
-                <p>
-                  Logout
-                </p>
-              </div>
-            </li>
-          </ul>
+          <div
+            className="header__nav-section"
+          >
+            <ul>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="header__nav-section"
+          >
+            <ul
+              className="header__nav-list"
+            >
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/dashboard"
+                >
+                  <img
+                    alt="menu-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/menu-icon.png"
+                  />
+                  <p>
+                    Menu
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/dashboard"
+                >
+                  <img
+                    alt="settings-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/settings-icon.png"
+                  />
+                  <p>
+                    Settings
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <div
+                  className="header__nav-item"
+                  onClick={[Function]}
+                >
+                  <img
+                    alt="logout-icon"
+                    className="header__nav-icon"
+                    src="/images/themes/test-theme/logout-icon.png"
+                  />
+                  <p>
+                    Logout
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </nav>,
       },
       "ref": null,
@@ -338,186 +702,121 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <ul>
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/dashboard"
+          "children": Array [
+            <div
+              className="header__nav-section"
+            >
+              <ul>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>
+                </li>
+              </ul>
+            </div>,
+            <div
+              className="header__nav-section"
+            >
+              <ul
+                className="header__nav-list"
               >
-                <p>
-                  Menu
-                </p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Settings
-                </p>
-              </Link>
-            </li>
-            <li>
-              <div
-                className="header__nav-item"
-                onClick={[Function]}
-              >
-                <p>
-                  Logout
-                </p>
-              </div>
-            </li>
-          </ul>,
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="menu-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/menu-icon.png"
+                    />
+                    <p>
+                      Menu
+                    </p>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="settings-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/settings-icon.png"
+                    />
+                    <p>
+                      Settings
+                    </p>
+                  </Link>
+                </li>
+                <li>
+                  <div
+                    className="header__nav-item"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="logout-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/logout-icon.png"
+                    />
+                    <p>
+                      Logout
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>,
+          ],
           "className": "header__nav",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <li>
-                <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/dashboard"
-                >
-                  <p>
-                    Menu
-                  </p>
-                </Link>
-              </li>,
-              <li>
-                <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/register"
-                >
-                  <p>
-                    Settings
-                  </p>
-                </Link>
-              </li>,
-              <li>
-                <div
-                  className="header__nav-item"
-                  onClick={[Function]}
-                >
-                  <p>
-                    Logout
-                  </p>
-                </div>
-              </li>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/dashboard"
-                >
-                  <p>
-                    Menu
-                  </p>
-                </Link>,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <p>
-                    Menu
-                  </p>,
-                  "className": "header__nav-item",
-                  "replace": false,
-                  "to": "/dashboard",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Menu",
-                  },
-                  "ref": null,
-                  "rendered": "Menu",
-                  "type": "p",
-                },
-                "type": [Function],
-              },
-              "type": "li",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>
+                </li>
+              </ul>,
+              "className": "header__nav-section",
             },
-            Object {
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/register"
-                >
-                  <p>
-                    Settings
-                  </p>
-                </Link>,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <p>
-                    Settings
-                  </p>,
-                  "className": "header__nav-item",
-                  "replace": false,
-                  "to": "/register",
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Settings",
-                  },
-                  "ref": null,
-                  "rendered": "Settings",
-                  "type": "p",
-                },
-                "type": [Function],
-              },
-              "type": "li",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <div
-                  className="header__nav-item"
-                  onClick={[Function]}
-                >
-                  <p>
-                    Logout
-                  </p>
-                </div>,
+                "children": <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>
+                </li>,
               },
               "ref": null,
               "rendered": Object {
@@ -525,31 +824,383 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": <p>
-                    Logout
-                  </p>,
-                  "className": "header__nav-item",
-                  "onClick": [Function],
+                  "children": <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>,
                 },
                 "ref": null,
                 "rendered": Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
-                    "children": "Logout",
+                    "children": <p>
+                      My 90s Notebook
+                    </p>,
+                    "className": "header__nav-item",
+                    "replace": false,
+                    "to": "/",
                   },
                   "ref": null,
-                  "rendered": "Logout",
-                  "type": "p",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "My 90s Notebook",
+                    },
+                    "ref": null,
+                    "rendered": "My 90s Notebook",
+                    "type": "p",
+                  },
+                  "type": [Function],
                 },
-                "type": "div",
+                "type": "li",
               },
-              "type": "li",
+              "type": "ul",
             },
-          ],
-          "type": "ul",
-        },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul
+                className="header__nav-list"
+              >
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="menu-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/menu-icon.png"
+                    />
+                    <p>
+                      Menu
+                    </p>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    <img
+                      alt="settings-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/settings-icon.png"
+                    />
+                    <p>
+                      Settings
+                    </p>
+                  </Link>
+                </li>
+                <li>
+                  <div
+                    className="header__nav-item"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="logout-icon"
+                      className="header__nav-icon"
+                      src="/images/themes/test-theme/logout-icon.png"
+                    />
+                    <p>
+                      Logout
+                    </p>
+                  </div>
+                </li>
+              </ul>,
+              "className": "header__nav-section",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/dashboard"
+                    >
+                      <img
+                        alt="menu-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/menu-icon.png"
+                      />
+                      <p>
+                        Menu
+                      </p>
+                    </Link>
+                  </li>,
+                  <li>
+                    <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/dashboard"
+                    >
+                      <img
+                        alt="settings-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/settings-icon.png"
+                      />
+                      <p>
+                        Settings
+                      </p>
+                    </Link>
+                  </li>,
+                  <li>
+                    <div
+                      className="header__nav-item"
+                      onClick={[Function]}
+                    >
+                      <img
+                        alt="logout-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/logout-icon.png"
+                      />
+                      <p>
+                        Logout
+                      </p>
+                    </div>
+                  </li>,
+                ],
+                "className": "header__nav-list",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/dashboard"
+                    >
+                      <img
+                        alt="menu-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/menu-icon.png"
+                      />
+                      <p>
+                        Menu
+                      </p>
+                    </Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <img
+                          alt="menu-icon"
+                          className="header__nav-icon"
+                          src="/images/themes/test-theme/menu-icon.png"
+                        />,
+                        <p>
+                          Menu
+                        </p>,
+                      ],
+                      "className": "header__nav-item",
+                      "replace": false,
+                      "to": "/dashboard",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "alt": "menu-icon",
+                          "className": "header__nav-icon",
+                          "src": "/images/themes/test-theme/menu-icon.png",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "img",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Menu",
+                        },
+                        "ref": null,
+                        "rendered": "Menu",
+                        "type": "p",
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/dashboard"
+                    >
+                      <img
+                        alt="settings-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/settings-icon.png"
+                      />
+                      <p>
+                        Settings
+                      </p>
+                    </Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": Array [
+                        <img
+                          alt="settings-icon"
+                          className="header__nav-icon"
+                          src="/images/themes/test-theme/settings-icon.png"
+                        />,
+                        <p>
+                          Settings
+                        </p>,
+                      ],
+                      "className": "header__nav-item",
+                      "replace": false,
+                      "to": "/dashboard",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "alt": "settings-icon",
+                          "className": "header__nav-icon",
+                          "src": "/images/themes/test-theme/settings-icon.png",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "img",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Settings",
+                        },
+                        "ref": null,
+                        "rendered": "Settings",
+                        "type": "p",
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <div
+                      className="header__nav-item"
+                      onClick={[Function]}
+                    >
+                      <img
+                        alt="logout-icon"
+                        className="header__nav-icon"
+                        src="/images/themes/test-theme/logout-icon.png"
+                      />
+                      <p>
+                        Logout
+                      </p>
+                    </div>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <img
+                          alt="logout-icon"
+                          className="header__nav-icon"
+                          src="/images/themes/test-theme/logout-icon.png"
+                        />,
+                        <p>
+                          Logout
+                        </p>,
+                      ],
+                      "className": "header__nav-item",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "alt": "logout-icon",
+                          "className": "header__nav-icon",
+                          "src": "/images/themes/test-theme/logout-icon.png",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "img",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "Logout",
+                        },
+                        "ref": null,
+                        "rendered": "Logout",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            "type": "div",
+          },
+        ],
         "type": "nav",
       },
       "type": "div",
@@ -587,6 +1238,7 @@ ShallowWrapper {
     }
     clearCurrentProfile={[MockFunction]}
     logoutUser={[MockFunction]}
+    theme="test-theme"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -604,202 +1256,29 @@ ShallowWrapper {
       "children": <nav
         className="header__nav"
       >
-        <ul>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/login"
-            >
-              <p>
-                Login
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/register"
-            >
-              <p>
-                Register
-              </p>
-            </Link>
-          </li>
-        </ul>
-      </nav>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <ul>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/login"
-            >
-              <p>
-                Login
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="header__nav-item"
-              replace={false}
-              to="/register"
-            >
-              <p>
-                Register
-              </p>
-            </Link>
-          </li>
-        </ul>,
-        "className": "header__nav",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/login"
-              >
-                <p>
-                  Login
-                </p>
-              </Link>
-            </li>,
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Register
-                </p>
-              </Link>
-            </li>,
-          ],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                className="header__nav-item"
-                replace={false}
-                to="/login"
-              >
-                <p>
-                  Login
-                </p>
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <p>
-                  Login
-                </p>,
-                "className": "header__nav-item",
-                "replace": false,
-                "to": "/login",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Login",
-                },
-                "ref": null,
-                "rendered": "Login",
-                "type": "p",
-              },
-              "type": [Function],
-            },
-            "type": "li",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Register
-                </p>
-              </Link>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <p>
-                  Register
-                </p>,
-                "className": "header__nav-item",
-                "replace": false,
-                "to": "/register",
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Register",
-                },
-                "ref": null,
-                "rendered": "Register",
-                "type": "p",
-              },
-              "type": [Function],
-            },
-            "type": "li",
-          },
-        ],
-        "type": "ul",
-      },
-      "type": "nav",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <nav
-          className="header__nav"
+        <div
+          className="header__nav-section"
         >
           <ul>
+            <li>
+              <Link
+                className="header__nav-item"
+                replace={false}
+                to="/"
+              >
+                <p>
+                  My 90s Notebook
+                </p>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="header__nav-section"
+        >
+          <ul
+            className="header__nav-list"
+          >
             <li>
               <Link
                 className="header__nav-item"
@@ -823,6 +1302,376 @@ ShallowWrapper {
               </Link>
             </li>
           </ul>
+        </div>
+      </nav>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="header__nav-section"
+          >
+            <ul>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>,
+          <div
+            className="header__nav-section"
+          >
+            <ul
+              className="header__nav-list"
+            >
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/login"
+                >
+                  <p>
+                    Login
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/register"
+                >
+                  <p>
+                    Register
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>,
+        ],
+        "className": "header__nav",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>
+            </ul>,
+            "className": "header__nav-section",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <p>
+                    My 90s Notebook
+                  </p>,
+                  "className": "header__nav-item",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "My 90s Notebook",
+                  },
+                  "ref": null,
+                  "rendered": "My 90s Notebook",
+                  "type": "p",
+                },
+                "type": [Function],
+              },
+              "type": "li",
+            },
+            "type": "ul",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="header__nav-list"
+            >
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/login"
+                >
+                  <p>
+                    Login
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/register"
+                >
+                  <p>
+                    Register
+                  </p>
+                </Link>
+              </li>
+            </ul>,
+            "className": "header__nav-section",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/login"
+                  >
+                    <p>
+                      Login
+                    </p>
+                  </Link>
+                </li>,
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/register"
+                  >
+                    <p>
+                      Register
+                    </p>
+                  </Link>
+                </li>,
+              ],
+              "className": "header__nav-list",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/login"
+                  >
+                    <p>
+                      Login
+                    </p>
+                  </Link>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <p>
+                      Login
+                    </p>,
+                    "className": "header__nav-item",
+                    "replace": false,
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Login",
+                    },
+                    "ref": null,
+                    "rendered": "Login",
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/register"
+                  >
+                    <p>
+                      Register
+                    </p>
+                  </Link>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <p>
+                      Register
+                    </p>,
+                    "className": "header__nav-item",
+                    "replace": false,
+                    "to": "/register",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Register",
+                    },
+                    "ref": null,
+                    "rendered": "Register",
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+            ],
+            "type": "ul",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "nav",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <nav
+          className="header__nav"
+        >
+          <div
+            className="header__nav-section"
+          >
+            <ul>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/"
+                >
+                  <p>
+                    My 90s Notebook
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="header__nav-section"
+          >
+            <ul
+              className="header__nav-list"
+            >
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/login"
+                >
+                  <p>
+                    Login
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="header__nav-item"
+                  replace={false}
+                  to="/register"
+                >
+                  <p>
+                    Register
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </nav>,
       },
       "ref": null,
@@ -831,156 +1680,307 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <ul>
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/login"
+          "children": Array [
+            <div
+              className="header__nav-section"
+            >
+              <ul>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>
+                </li>
+              </ul>
+            </div>,
+            <div
+              className="header__nav-section"
+            >
+              <ul
+                className="header__nav-list"
               >
-                <p>
-                  Login
-                </p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="header__nav-item"
-                replace={false}
-                to="/register"
-              >
-                <p>
-                  Register
-                </p>
-              </Link>
-            </li>
-          </ul>,
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/login"
+                  >
+                    <p>
+                      Login
+                    </p>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/register"
+                  >
+                    <p>
+                      Register
+                    </p>
+                  </Link>
+                </li>
+              </ul>
+            </div>,
+          ],
           "className": "header__nav",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <li>
-                <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/login"
-                >
-                  <p>
-                    Login
-                  </p>
-                </Link>
-              </li>,
-              <li>
-                <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/register"
-                >
-                  <p>
-                    Register
-                  </p>
-                </Link>
-              </li>,
-            ],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>
+                </li>
+              </ul>,
+              "className": "header__nav-section",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>
+                </li>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/"
+                  >
+                    <p>
+                      My 90s Notebook
+                    </p>
+                  </Link>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": <p>
+                      My 90s Notebook
+                    </p>,
+                    "className": "header__nav-item",
+                    "replace": false,
+                    "to": "/",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "My 90s Notebook",
+                    },
+                    "ref": null,
+                    "rendered": "My 90s Notebook",
+                    "type": "p",
+                  },
+                  "type": [Function],
+                },
+                "type": "li",
+              },
+              "type": "ul",
+            },
+            "type": "div",
           },
-          "ref": null,
-          "rendered": Array [
-            Object {
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul
+                className="header__nav-list"
+              >
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/login"
+                  >
+                    <p>
+                      Login
+                    </p>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="header__nav-item"
+                    replace={false}
+                    to="/register"
+                  >
+                    <p>
+                      Register
+                    </p>
+                  </Link>
+                </li>
+              </ul>,
+              "className": "header__nav-section",
+            },
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/login"
-                >
-                  <p>
-                    Login
-                  </p>
-                </Link>,
+                "children": Array [
+                  <li>
+                    <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/login"
+                    >
+                      <p>
+                        Login
+                      </p>
+                    </Link>
+                  </li>,
+                  <li>
+                    <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/register"
+                    >
+                      <p>
+                        Register
+                      </p>
+                    </Link>
+                  </li>,
+                ],
+                "className": "header__nav-list",
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <p>
-                    Login
-                  </p>,
-                  "className": "header__nav-item",
-                  "replace": false,
-                  "to": "/login",
-                },
-                "ref": null,
-                "rendered": Object {
+              "rendered": Array [
+                Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Login",
+                    "children": <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/login"
+                    >
+                      <p>
+                        Login
+                      </p>
+                    </Link>,
                   },
                   "ref": null,
-                  "rendered": "Login",
-                  "type": "p",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <p>
+                        Login
+                      </p>,
+                      "className": "header__nav-item",
+                      "replace": false,
+                      "to": "/login",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Login",
+                      },
+                      "ref": null,
+                      "rendered": "Login",
+                      "type": "p",
+                    },
+                    "type": [Function],
+                  },
+                  "type": "li",
                 },
-                "type": [Function],
-              },
-              "type": "li",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <Link
-                  className="header__nav-item"
-                  replace={false}
-                  to="/register"
-                >
-                  <p>
-                    Register
-                  </p>
-                </Link>,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": <p>
-                    Register
-                  </p>,
-                  "className": "header__nav-item",
-                  "replace": false,
-                  "to": "/register",
-                },
-                "ref": null,
-                "rendered": Object {
+                Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Register",
+                    "children": <Link
+                      className="header__nav-item"
+                      replace={false}
+                      to="/register"
+                    >
+                      <p>
+                        Register
+                      </p>
+                    </Link>,
                   },
                   "ref": null,
-                  "rendered": "Register",
-                  "type": "p",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <p>
+                        Register
+                      </p>,
+                      "className": "header__nav-item",
+                      "replace": false,
+                      "to": "/register",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Register",
+                      },
+                      "ref": null,
+                      "rendered": "Register",
+                      "type": "p",
+                    },
+                    "type": [Function],
+                  },
+                  "type": "li",
                 },
-                "type": [Function],
-              },
-              "type": "li",
+              ],
+              "type": "ul",
             },
-          ],
-          "type": "ul",
-        },
+            "type": "div",
+          },
+        ],
         "type": "nav",
       },
       "type": "div",

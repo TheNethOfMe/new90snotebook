@@ -52,11 +52,13 @@ ShallowWrapper {
             value=""
           />
           <input
+            className="input__submit"
             type="submit"
             value="Log In"
           />
         </form>,
       ],
+      "className": "noauth__subheading",
     },
     "ref": null,
     "rendered": Array [
@@ -96,6 +98,7 @@ ShallowWrapper {
               value=""
             />,
             <input
+              className="input__submit"
               type="submit"
               value="Log In"
             />,
@@ -145,6 +148,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "input__submit",
               "type": "submit",
               "value": "Log In",
             },
@@ -190,11 +194,13 @@ ShallowWrapper {
               value=""
             />
             <input
+              className="input__submit"
               type="submit"
               value="Log In"
             />
           </form>,
         ],
+        "className": "noauth__subheading",
       },
       "ref": null,
       "rendered": Array [
@@ -234,6 +240,7 @@ ShallowWrapper {
                 value=""
               />,
               <input
+                className="input__submit"
                 type="submit"
                 value="Log In"
               />,
@@ -283,6 +290,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "input__submit",
                 "type": "submit",
                 "value": "Log In",
               },

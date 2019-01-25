@@ -25,6 +25,5 @@ export const fakeUserProfile = {
   nickName: "The Spark",
   theme: "paper-cup",
   blacklist: [],
-  searchableProfile: true,
-  screenName: "Sparkster"
+  searchableProfile: true
 };

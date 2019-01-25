@@ -47,3 +47,12 @@ test("should clear current profile", () => {
   store.dispatch(profileActions.clearCurrentProfile());
   expect(store.getActions()[0]).toEqual({ type: "CLEAR_CURRENT_PROFILE" });
 });
+
+test("should create a new profile", () => {
+  const store = createMockStore({ profile: { profile: {}, loading: false } });
+  store.dispatch(profileActions.createNewProfile(fakeUserProfile));
+  expect(mockAxios.post).toHaveBeenLastCalledWith(
+    "/api/profile/",
+    fakeUserProfile
+  );
+});

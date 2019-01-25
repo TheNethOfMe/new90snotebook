@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { Dashboard } from "../../../components/layout/Dashboard";
+import { Dashboard } from "../../../components/dashboard/Dashboard";
 
 let wrapper, getCurrentProfile;
 
