@@ -14,19 +14,23 @@ const TextFieldGroup = ({
   disabled
 }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
+    <div className="input">
+      <label className="input__label" htmlFor={name}>
+        {label}
+      </label>
       <input
         type={type}
-        className={classnames({ "invalid-input": error })}
+        className={classnames("input__field", {
+          "input__invalid-input": error
+        })}
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={onChange}
         disabled={disabled}
       />
-      {info && <p>{info}</p>}
-      {error && <div>{error}</div>}
+      {info && <p className="input__info">{info}</p>}
+      {error && <p className="input__error">{error}</p>}
     </div>
   );
 };

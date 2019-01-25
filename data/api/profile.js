@@ -56,10 +56,8 @@ router.post(
     if (req.body.lastName) profileFields.lastName = req.body.lastName;
     if (req.body.nickName) profileFields.nickName = req.body.nickName;
     if (req.body.theme) profileFields.theme = req.body.theme;
-    if (req.body.screenName) profileFields.screenName = req.body.screenName;
     if (req.body.searchableProfile)
       profileFields.searchableProfile = req.body.searchableProfile;
-
     Profile.findOne({ user: req.user.id }).then(profile => {
       if (profile) {
         // Update
@@ -70,18 +68,10 @@ router.post(
         ).then(profile => res.json(profile));
       } else {
         // Create
-        // Ensure screenName is unique
-        Profile.findOne({ screenName: profileFields.screenName }).then(
-          profile => {
-            if (profile) {
-              errors.screenName = "That screen name has been taken.";
-              res.status(400).json(errors);
-            }
-            new Profile(profileFields)
-              .save()
-              .then(profile => res.json(profile));
-          }
-        );
+        new Profile(profileFields)
+          .save()
+          .then(profile => res.json(profile))
+          .catch(err => console.log(err));
       }
     });
   }

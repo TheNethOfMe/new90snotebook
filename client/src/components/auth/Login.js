@@ -39,9 +39,8 @@ export class Login extends Component {
   };
   render() {
     const { errors } = this.state;
-
     return (
-      <div>
+      <div className="noauth__subheading">
         <h1>Login</h1>
         <form onSubmit={this.onSubmit}>
           <TextFieldGroup
@@ -61,7 +60,7 @@ export class Login extends Component {
             error={errors.password}
             onChange={this.onChange}
           />
-          <input type="submit" value="Log In" />
+          <input className="input__submit" type="submit" value="Log In" />
         </form>
       </div>
     );

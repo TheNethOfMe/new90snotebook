@@ -40,39 +40,41 @@ export class Register extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div>
-        <h1>Register</h1>
-        <form noValidate onSubmit={this.onSubmit}>
-          <TextFieldGroup
-            name="email"
-            placeholder="email"
-            value={this.state.email}
-            type="email"
-            label="Enter Email: "
-            error={errors.email}
-            onChange={this.onChange}
-          />
-          <TextFieldGroup
-            name="password"
-            placeholder="password"
-            value={this.state.password}
-            type="password"
-            label="Enter Password: "
-            error={errors.password}
-            onChange={this.onChange}
-          />
-          <TextFieldGroup
-            name="password2"
-            placeholder="password2"
-            value={this.state.password2}
-            type="password"
-            label="Confirm Password: "
-            error={errors.password2}
-            onChange={this.onChange}
-          />
+      <div className="noauth__subheading">
+        <div className="noauth__form">
+          <h1>Register</h1>
+          <form noValidate onSubmit={this.onSubmit}>
+            <TextFieldGroup
+              name="email"
+              placeholder="email"
+              value={this.state.email}
+              type="email"
+              label="Enter Email: "
+              error={errors.email}
+              onChange={this.onChange}
+            />
+            <TextFieldGroup
+              name="password"
+              placeholder="password"
+              value={this.state.password}
+              type="password"
+              label="Enter Password: "
+              error={errors.password}
+              onChange={this.onChange}
+            />
+            <TextFieldGroup
+              name="password2"
+              placeholder="password2"
+              value={this.state.password2}
+              type="password"
+              label="Confirm Password: "
+              error={errors.password2}
+              onChange={this.onChange}
+            />
 
-          <input type="submit" value="Sign Up" />
-        </form>
+            <input className="input__submit" type="submit" value="Sign Up" />
+          </form>
+        </div>
       </div>
     );
   }

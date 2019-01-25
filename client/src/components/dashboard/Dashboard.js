@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
+import FirstTime from "../dashboard/FirstTime";
 
 export class Dashboard extends Component {
   componentDidMount() {
     this.props.getCurrentProfile();
   }
   render() {
-    const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
     let dashboardContent;
 
@@ -19,7 +19,7 @@ export class Dashboard extends Component {
       if (Object.keys(profile).length > 0) {
         dashboardContent = <h3>Display Profile</h3>;
       } else {
-        dashboardContent = <h3>You Have No Profile</h3>;
+        dashboardContent = <FirstTime />;
       }
     }
     return (
