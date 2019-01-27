@@ -52,6 +52,7 @@ router.post(
     }
     const profileFields = {};
     profileFields.user = req.user.id;
+    profileFields.email = req.user.email;
     if (req.body.firstName) profileFields.firstName = req.body.firstName;
     if (req.body.lastName) profileFields.lastName = req.body.lastName;
     if (req.body.nickName) profileFields.nickName = req.body.nickName;
@@ -77,37 +78,80 @@ router.post(
   }
 );
 
-// ROUTE  GET api/profile/screenname/:sn
-// DESC   Gets a User Profile by ScreenName
+// ROUTE  GET api/profile/search/?
+// DESC   Gets profiles by first, last, and nickname search
 // ACCESS Private
 router.get(
-  "/screenname/:sn",
+  "/search",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const errors = {};
-    Profile.findOne({ screenName: req.params.sn })
-      .populate("user", ["email"])
-      .then(profile => {
-        if (!profile) {
-          errors.noprofile = "There is no profile for this user.";
-          res.status(404).json(errors);
+    const searchFirstName = req.query.firstName ? req.query.firstName : "";
+    const searchNickName = req.query.nickName ? req.query.nickName : "";
+    const searchLastName = req.query.lastName ? req.query.lastName : "";
+    if (!searchFirstName && !searchNickName && !searchLastName) {
+      errors.empty = "You need to enter at least one name to search.";
+      res.status(404).json(errors);
+    }
+    Profile.aggregate([
+      {
+        $match: {
+          $or: [
+            {
+              $and: [
+                { firstName: searchFirstName },
+                { nickName: searchNickName }
+              ]
+            },
+            {
+              $and: [{ nickName: searchNickName }, { lastName: searchLastName }]
+            },
+            {
+              $and: [
+                { firstName: searchFirstName },
+                { lastName: searchLastName }
+              ]
+            }
+          ]
         }
-        res.json(profile);
-      })
-      .catch(err => res.status(500).json(err));
+      },
+      {
+        $addFields: {
+          exact: {
+            $allElementsTrue: [
+              [
+                { $eq: ["$firstName", searchFirstName] },
+                { $eq: ["$nickName", searchNickName] },
+                { $eq: ["$lastName", searchLastName] }
+              ]
+            ]
+          }
+        }
+      },
+      {
+        $sort: {
+          exact: -1
+        }
+      },
+      {
+        $project: {
+          exact: 0
+        }
+      }
+    ]).then(data => res.status(200).json(data));
   }
 );
 
-// ROUTE  GET api/profile/user/:user_id
-// DESC   Gets a User Profile by User ID
+// ROUTE  GET api/profile/email/:email
+// DESC   Gets a User Profile by email address
 // ACCESS Private
 router.get(
-  "/user/:user_id",
+  "/email/:email",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const errors = {};
-    Profile.findOne({ user: req.params.user_id })
-      .populate("user", ["email"])
+    Profile.findOne({ email: req.params.email })
+      // .populate("user", ["email"])
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user.";
