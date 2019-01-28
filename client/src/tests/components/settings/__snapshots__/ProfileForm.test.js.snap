@@ -1,0 +1,637 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the profile form 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ProfileForm
+    errors={Object {}}
+    handleSubmit={[MockFunction]}
+    profile={null}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <form
+        onSubmit={[Function]}
+      >
+        <TextFieldGroup
+          disabled={false}
+          label="First Name"
+          name="firstName"
+          onChange={[Function]}
+          placeholder="firstName"
+          type="text"
+          value=""
+        />
+        <TextFieldGroup
+          disabled={false}
+          label="Last Name"
+          name="lastName"
+          onChange={[Function]}
+          placeholder="lastName"
+          type="text"
+          value=""
+        />
+        <TextFieldGroup
+          disabled={false}
+          label="Nick Name"
+          name="nickName"
+          onChange={[Function]}
+          placeholder="nickName"
+          type="text"
+          value=""
+        />
+        <DropDownGroup
+          disabled={false}
+          info="Hidden profiles can not be found or friended by anyone else."
+          label="Do you want to be searchable?"
+          name="searchableProfile"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "display": "Make my profile hidden",
+                "val": false,
+              },
+              Object {
+                "display": "Make my profile searchable",
+                "val": true,
+              },
+            ]
+          }
+          type="text"
+        />
+        <DropDownGroup
+          disabled={false}
+          label="Choose a theme"
+          name="theme"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "display": "Paper Cup",
+                "val": "paper-cup",
+              },
+              Object {
+                "display": "Tropical",
+                "val": "tropical",
+              },
+              Object {
+                "display": "Frankly Lisa",
+                "val": "frankly-lisa",
+              },
+            ]
+          }
+          type="text"
+        />
+        <input
+          className="input__submit"
+          type="submit"
+          value="Finished!"
+        />
+      </form>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <TextFieldGroup
+            disabled={false}
+            label="First Name"
+            name="firstName"
+            onChange={[Function]}
+            placeholder="firstName"
+            type="text"
+            value=""
+          />,
+          <TextFieldGroup
+            disabled={false}
+            label="Last Name"
+            name="lastName"
+            onChange={[Function]}
+            placeholder="lastName"
+            type="text"
+            value=""
+          />,
+          <TextFieldGroup
+            disabled={false}
+            label="Nick Name"
+            name="nickName"
+            onChange={[Function]}
+            placeholder="nickName"
+            type="text"
+            value=""
+          />,
+          <DropDownGroup
+            disabled={false}
+            info="Hidden profiles can not be found or friended by anyone else."
+            label="Do you want to be searchable?"
+            name="searchableProfile"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "display": "Make my profile hidden",
+                  "val": false,
+                },
+                Object {
+                  "display": "Make my profile searchable",
+                  "val": true,
+                },
+              ]
+            }
+            type="text"
+          />,
+          <DropDownGroup
+            disabled={false}
+            label="Choose a theme"
+            name="theme"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "display": "Paper Cup",
+                  "val": "paper-cup",
+                },
+                Object {
+                  "display": "Tropical",
+                  "val": "tropical",
+                },
+                Object {
+                  "display": "Frankly Lisa",
+                  "val": "frankly-lisa",
+                },
+              ]
+            }
+            type="text"
+          />,
+          <input
+            className="input__submit"
+            type="submit"
+            value="Finished!"
+          />,
+        ],
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "disabled": false,
+            "error": undefined,
+            "label": "First Name",
+            "name": "firstName",
+            "onChange": [Function],
+            "placeholder": "firstName",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "disabled": false,
+            "error": undefined,
+            "label": "Last Name",
+            "name": "lastName",
+            "onChange": [Function],
+            "placeholder": "lastName",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "disabled": false,
+            "error": undefined,
+            "label": "Nick Name",
+            "name": "nickName",
+            "onChange": [Function],
+            "placeholder": "nickName",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "disabled": false,
+            "info": "Hidden profiles can not be found or friended by anyone else.",
+            "label": "Do you want to be searchable?",
+            "name": "searchableProfile",
+            "onChange": [Function],
+            "options": Array [
+              Object {
+                "display": "Make my profile hidden",
+                "val": false,
+              },
+              Object {
+                "display": "Make my profile searchable",
+                "val": true,
+              },
+            ],
+            "type": "text",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "disabled": false,
+            "label": "Choose a theme",
+            "name": "theme",
+            "onChange": [Function],
+            "options": Array [
+              Object {
+                "display": "Paper Cup",
+                "val": "paper-cup",
+              },
+              Object {
+                "display": "Tropical",
+                "val": "tropical",
+              },
+              Object {
+                "display": "Frankly Lisa",
+                "val": "frankly-lisa",
+              },
+            ],
+            "type": "text",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input__submit",
+            "type": "submit",
+            "value": "Finished!",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "form",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <form
+          onSubmit={[Function]}
+        >
+          <TextFieldGroup
+            disabled={false}
+            label="First Name"
+            name="firstName"
+            onChange={[Function]}
+            placeholder="firstName"
+            type="text"
+            value=""
+          />
+          <TextFieldGroup
+            disabled={false}
+            label="Last Name"
+            name="lastName"
+            onChange={[Function]}
+            placeholder="lastName"
+            type="text"
+            value=""
+          />
+          <TextFieldGroup
+            disabled={false}
+            label="Nick Name"
+            name="nickName"
+            onChange={[Function]}
+            placeholder="nickName"
+            type="text"
+            value=""
+          />
+          <DropDownGroup
+            disabled={false}
+            info="Hidden profiles can not be found or friended by anyone else."
+            label="Do you want to be searchable?"
+            name="searchableProfile"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "display": "Make my profile hidden",
+                  "val": false,
+                },
+                Object {
+                  "display": "Make my profile searchable",
+                  "val": true,
+                },
+              ]
+            }
+            type="text"
+          />
+          <DropDownGroup
+            disabled={false}
+            label="Choose a theme"
+            name="theme"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "display": "Paper Cup",
+                  "val": "paper-cup",
+                },
+                Object {
+                  "display": "Tropical",
+                  "val": "tropical",
+                },
+                Object {
+                  "display": "Frankly Lisa",
+                  "val": "frankly-lisa",
+                },
+              ]
+            }
+            type="text"
+          />
+          <input
+            className="input__submit"
+            type="submit"
+            value="Finished!"
+          />
+        </form>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TextFieldGroup
+              disabled={false}
+              label="First Name"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="firstName"
+              type="text"
+              value=""
+            />,
+            <TextFieldGroup
+              disabled={false}
+              label="Last Name"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="lastName"
+              type="text"
+              value=""
+            />,
+            <TextFieldGroup
+              disabled={false}
+              label="Nick Name"
+              name="nickName"
+              onChange={[Function]}
+              placeholder="nickName"
+              type="text"
+              value=""
+            />,
+            <DropDownGroup
+              disabled={false}
+              info="Hidden profiles can not be found or friended by anyone else."
+              label="Do you want to be searchable?"
+              name="searchableProfile"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "display": "Make my profile hidden",
+                    "val": false,
+                  },
+                  Object {
+                    "display": "Make my profile searchable",
+                    "val": true,
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <DropDownGroup
+              disabled={false}
+              label="Choose a theme"
+              name="theme"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "display": "Paper Cup",
+                    "val": "paper-cup",
+                  },
+                  Object {
+                    "display": "Tropical",
+                    "val": "tropical",
+                  },
+                  Object {
+                    "display": "Frankly Lisa",
+                    "val": "frankly-lisa",
+                  },
+                ]
+              }
+              type="text"
+            />,
+            <input
+              className="input__submit"
+              type="submit"
+              value="Finished!"
+            />,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "disabled": false,
+              "error": undefined,
+              "label": "First Name",
+              "name": "firstName",
+              "onChange": [Function],
+              "placeholder": "firstName",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "disabled": false,
+              "error": undefined,
+              "label": "Last Name",
+              "name": "lastName",
+              "onChange": [Function],
+              "placeholder": "lastName",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "disabled": false,
+              "error": undefined,
+              "label": "Nick Name",
+              "name": "nickName",
+              "onChange": [Function],
+              "placeholder": "nickName",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "disabled": false,
+              "info": "Hidden profiles can not be found or friended by anyone else.",
+              "label": "Do you want to be searchable?",
+              "name": "searchableProfile",
+              "onChange": [Function],
+              "options": Array [
+                Object {
+                  "display": "Make my profile hidden",
+                  "val": false,
+                },
+                Object {
+                  "display": "Make my profile searchable",
+                  "val": true,
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "disabled": false,
+              "label": "Choose a theme",
+              "name": "theme",
+              "onChange": [Function],
+              "options": Array [
+                Object {
+                  "display": "Paper Cup",
+                  "val": "paper-cup",
+                },
+                Object {
+                  "display": "Tropical",
+                  "val": "tropical",
+                },
+                Object {
+                  "display": "Frankly Lisa",
+                  "val": "frankly-lisa",
+                },
+              ],
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "input__submit",
+              "type": "submit",
+              "value": "Finished!",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "form",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

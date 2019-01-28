@@ -110,5 +110,6 @@ export default class ProfileForm extends Component {
 
 ProfileForm.propTypes = {
   profile: PropTypes.object,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
