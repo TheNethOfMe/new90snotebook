@@ -2,19 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const NotificationSchema = new Schema({
-  user: {
+  notificationFor: {
     type: Schema.Types.ObjectId,
     ref: "users"
   },
-  messages: {
-    type: Number,
-    default: 0
+  message: {
+    type: String
   },
-  friendRequests: {
-    type: [String]
-  },
-  newFriends: {
-    type: [String]
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 });
 

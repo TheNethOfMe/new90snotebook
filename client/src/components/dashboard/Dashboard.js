@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
-import FirstTime from "../dashboard/FirstTime";
+import FirstTime from "./FirstTime";
+import Notification from "./Notifications";
 
 export class Dashboard extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ export class Dashboard extends Component {
       dashboardContent = <Spinner />;
     } else {
       if (Object.keys(profile).length > 0) {
-        dashboardContent = <h3>Display Profile</h3>;
+        dashboardContent = <Notification />;
       } else {
         dashboardContent = <FirstTime />;
       }

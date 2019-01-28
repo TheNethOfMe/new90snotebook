@@ -1,23 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 const passport = require("passport");
 
 // Load models
 const Profile = require("../models/Profile");
-const User = require("../models/User");
+const Notification = require("../models/Notifications");
 
 // Load validation
 const validateProfileInput = require("../../validation/profile");
-
-// ROUTE  GET api/profile/test
-// DESC   Gets Test Profile Route
-// ACCESS Public
-router.get("/test", (req, res) => {
-  res.json({
-    msg: "Profile Works"
-  });
-});
 
 // ROUTE  GET api/profile/
 // DESC   Gets Current User's Profile
@@ -31,7 +21,7 @@ router.get(
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
-          res.status(404).send(errors);
+          res.status(404).json(errors);
         }
         res.json(profile);
       })
@@ -69,9 +59,20 @@ router.post(
         ).then(profile => res.json(profile));
       } else {
         // Create
+        const newNote = {
+          notificationFor: req.user.id,
+          message: "Welcome, glad to have you here!"
+        };
         new Profile(profileFields)
           .save()
-          .then(profile => res.json(profile))
+          .then(profile => {
+            new Notification(newNote)
+              .save()
+              .then(note => {
+                res.status(201).json(note);
+              })
+              .catch(err => console.log(err));
+          })
           .catch(err => console.log(err));
       }
     });
