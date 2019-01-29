@@ -27,7 +27,6 @@ export class Navbar extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
     const showLinks = isAuthenticated && this.state.menuToggle;
-    console.log(showLinks);
     const authLinks = (
       <ul className="header__nav-list">
         <li>

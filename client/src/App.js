@@ -20,6 +20,7 @@ import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 
 import "./sass/main.scss";
+import FirstTime from "./components/dashboard/FirstTime";
 
 // check for token (means user is logged in)
 if (localStorage.notebookToken) {
@@ -50,7 +51,9 @@ class App extends Component {
             </Switch>
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/firsttime" component={FirstTime} />
             </Switch>
+            <Switch />
             <Footer />
           </div>
         </Router>
