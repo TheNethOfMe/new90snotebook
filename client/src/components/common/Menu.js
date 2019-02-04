@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default () => (
   <div id="menu-display">
-    <h2>Hi, I'm a menu!</h2>
+    <Link to="/myfriends">Friends</Link>
   </div>
 );

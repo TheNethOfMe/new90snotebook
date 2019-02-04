@@ -4,6 +4,7 @@ const passport = require("passport");
 
 // Load models
 const Profile = require("../models/Profile");
+const User = require("../models/User");
 const Notification = require("../models/Notifications");
 
 // Load validation
@@ -69,7 +70,11 @@ router.post(
             new Notification(newNote)
               .save()
               .then(note => {
-                res.status(201).json(note);
+                User.findByIdAndUpdate(req.user.id, {
+                  $set: { hasProfile: true }
+                })
+                  .then(update => res.status(201).json(note))
+                  .catch(err => console.log(err));
               })
               .catch(err => console.log(err));
           })

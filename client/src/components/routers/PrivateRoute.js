@@ -9,7 +9,6 @@ const PrivateRoute = ({
   auth,
   bgTheme,
   subBgTheme,
-  hasProfile,
   ...rest
 }) => (
   <Route
@@ -18,7 +17,7 @@ const PrivateRoute = ({
       auth.isAuthenticated ? (
         <div id="main" className={bgTheme}>
           <div id="sub-main" className={subBgTheme}>
-            {hasProfile ? <Component {...props} /> : <FirstTime />}
+            {auth.hasProfile ? <Component {...props} /> : <FirstTime />}
           </div>
         </div>
       ) : (
@@ -30,7 +29,6 @@ const PrivateRoute = ({
 
 PrivateRoute.propTypes = {
   auth: PropTypes.object.isRequired,
-  hasProfile: PropTypes.bool.isRequired,
   bgTheme: PropTypes.string.isRequired,
   subBgTheme: PropTypes.string.isRequired
 };
@@ -38,7 +36,6 @@ PrivateRoute.propTypes = {
 const mapStateToProps = state => {
   const returnProps = {
     auth: state.auth,
-    hasProfile: false,
     bgTheme: "main-background-paper-cup",
     subBgTheme: "sub-background-paper-cup"
   };
@@ -53,20 +50,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(PrivateRoute);
-
-// {Object.keys(profile.profile).length === 0 ? (
-//   <Redirect to="/firsttime" />
-// ) : (
-//   <Component {...props} />
-// )}
-
-// const mapStateToProps = state => ({
-//   auth: state.auth,
-//   profile: state.profile.profile,
-//   bgTheme: state.profile.profile.theme
-//     ? `main-background-${state.profile.profile.theme}`
-//     : "main-background-paper-cup",
-//   subBgTheme: state.profile.profile.theme
-//     ? `sub-background-${state.profile.profile.theme}`
-//     : "sub-background-paper-cup"
-// });

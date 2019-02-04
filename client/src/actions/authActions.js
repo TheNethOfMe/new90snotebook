@@ -3,7 +3,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
 import setErrors from "./errorAction";
 
-import { SET_CURRENT_USER } from "./types";
+import { SET_CURRENT_USER, PROFILE_CREATED } from "./types";
 
 // Set Logged in User
 export const setCurrentUser = decoded => {
@@ -35,6 +35,11 @@ export const loginUser = userData => dispatch => {
       dispatch(setCurrentUser(decoded));
     })
     .catch(err => dispatch(setErrors(err)));
+};
+
+// Update store when user creates profile
+export const userProfileWasCreated = () => {
+  return { type: PROFILE_CREATED };
 };
 
 // Log Out
