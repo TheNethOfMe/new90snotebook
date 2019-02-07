@@ -1,5 +1,10 @@
 import axios from "axios";
-import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE } from "./types";
+import {
+  GET_PROFILE,
+  PROFILE_LOADING,
+  CLEAR_CURRENT_PROFILE,
+  SEARCH_PROFILES
+} from "./types";
 import setErrors from "./errorAction";
 import { userProfileWasCreated } from "./authActions";
 
@@ -42,11 +47,27 @@ export const createNewProfile = profileData => dispatch => {
     .post("/api/profile/", profileData)
     .then(res => {
       dispatch(getCurrentProfile());
-      console.log("Fire 1");
       dispatch(userProfileWasCreated());
-      console.log("Fire 2");
     })
     .catch(err => {
       dispatch(setErrors(err));
     });
+};
+
+// Return profiles after name search
+export const searchForUser = searchQuery => dispatch => {
+  dispatch(setProfileLoading);
+  let urlString = "/api/profile/search/?";
+  let queryArray = [];
+  if (searchQuery.firstName)
+    queryArray.push(`firstName=${searchQuery.firstName}`);
+  if (searchQuery.lastName) queryArray.push(`lastName=${searchQuery.lastName}`);
+  if (searchQuery.nickName) queryArray.push(`nickName=${searchQuery.nickName}`);
+  urlString += queryArray.join("&");
+  axios.get(urlString).then(res => {
+    dispatch({
+      type: SEARCH_PROFILES,
+      payload: res.data
+    });
+  });
 };

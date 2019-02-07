@@ -1,17 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function SubMenu(noteBookTabs, tabSelect) {
+export default function SubMenu({ notebookTabs, tabSelect, selected }) {
   return (
     <div>
-      {noteBookTabs.map(tab => {
+      {notebookTabs.map(tab => {
         return (
-          <div
-            key={tab.title}
-            className="sub-menu-tab"
-            onClick={tabSelect(tab.link)}
-          >
-            <h5>tab.title</h5>
+          <div key={tab.title} onClick={() => tabSelect(tab.link)}>
+            <h5>
+              {selected === tab.link && <span>* </span>}
+              {tab.title}
+            </h5>
           </div>
         );
       })}
@@ -20,6 +19,6 @@ export default function SubMenu(noteBookTabs, tabSelect) {
 }
 
 SubMenu.propTypes = {
-  noteBookTabs: PropTypes.array.isRequired,
+  notebookTabs: PropTypes.array.isRequired,
   tabSelect: PropTypes.func.isRequired
 };

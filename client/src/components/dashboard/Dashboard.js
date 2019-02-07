@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
-// import FirstTime from "./FirstTime";
 import Notification from "./Notifications";
 
 export class Dashboard extends Component {

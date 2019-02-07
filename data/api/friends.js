@@ -4,6 +4,10 @@ const passport = require("passport");
 
 // Load model
 const Friends = require("../models/Friends");
+const Profile = require("../models/Profile");
+
+// Load utility function
+const friendOrganizer = require("../utils/friendOrganizer");
 
 // ROUTE  POST api/friends
 // DESC   Builds a user's friend list
@@ -26,16 +30,7 @@ router.get(
       ]
     })
       .then(friendData => {
-        friendData.forEach(friend => {
-          if (friend.mutual) {
-            friendList.mutual.push(friend);
-          } else if (friend.requested === req.user.id) {
-            friendList.requested.push(friend);
-          } else {
-            friendList.received.push(friend);
-          }
-        });
-        res.status(200).json(friendList);
+        return friendOrganizer(friendData, req.user.id);
       })
       .catch(err => console.log(err));
   }
