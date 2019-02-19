@@ -84,7 +84,7 @@ router.post(
   }
 );
 
-// ROUTE  GET api/profile/search/?
+// ROUTE  GET api/profile/search?
 // DESC   Gets profiles by first, last, and nickname search
 // ACCESS Private
 router.get(

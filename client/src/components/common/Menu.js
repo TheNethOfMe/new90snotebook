@@ -3,6 +3,6 @@ import { Link } from "react-router-dom";
 
 export default () => (
   <div id="menu-display">
-    <Link to="/myfriends">Friends</Link>
+    <Link to="/friendDash">Friends</Link>
   </div>
 );

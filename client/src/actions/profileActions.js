@@ -54,20 +54,47 @@ export const createNewProfile = profileData => dispatch => {
     });
 };
 
+// Return profile after email search
+export const searchForEmail = emailQuery => dispatch => {
+  dispatch(setProfileLoading);
+  axios
+    .get(`/api/profile/email/${emailQuery}`)
+    .then(res => {
+      dispatch({
+        type: SEARCH_PROFILES,
+        payload: [res.data]
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: SEARCH_PROFILES,
+        payload: []
+      });
+    });
+};
+
 // Return profiles after name search
 export const searchForUser = searchQuery => dispatch => {
   dispatch(setProfileLoading);
-  let urlString = "/api/profile/search/?";
+  let urlString = "/api/profile/search?";
   let queryArray = [];
   if (searchQuery.firstName)
     queryArray.push(`firstName=${searchQuery.firstName}`);
   if (searchQuery.lastName) queryArray.push(`lastName=${searchQuery.lastName}`);
   if (searchQuery.nickName) queryArray.push(`nickName=${searchQuery.nickName}`);
   urlString += queryArray.join("&");
-  axios.get(urlString).then(res => {
-    dispatch({
-      type: SEARCH_PROFILES,
-      payload: res.data
+  axios
+    .get(urlString)
+    .then(res => {
+      dispatch({
+        type: SEARCH_PROFILES,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({
+        type: SEARCH_PROFILES,
+        payload: []
+      });
     });
-  });
 };

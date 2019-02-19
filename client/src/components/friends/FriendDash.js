@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import SubMenu from "../common/SubMenu";
+import FindFriends from "./FindFriends";
 
 export class MyFriends extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ export class MyFriends extends Component {
     this.setState({ selected: tab });
   };
   render() {
+    let display;
+    if (this.state.selected === "find") display = <FindFriends />;
     return (
       <div>
         <SubMenu
@@ -31,6 +34,7 @@ export class MyFriends extends Component {
           selected={this.state.selected}
         />
         <h3>Friends Page</h3>
+        {display}
       </div>
     );
   }
