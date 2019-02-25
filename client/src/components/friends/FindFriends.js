@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { searchForUser, searchForEmail } from "../../actions/profileActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 import Spinner from "../common/Spinner";
+import FoundProfile from "./FoundProfile";
 
 export class FindFriends extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ export class FindFriends extends Component {
       resultsContent = <p>No Profiles to Display</p>;
     } else {
       resultsContent = profiles.map((profile, idx) => {
-        return <p key={idx}>{profile.firstName}</p>;
+        return <FoundProfile key={idx} profile={profile} />;
       });
     }
     return (

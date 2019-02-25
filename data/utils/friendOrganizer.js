@@ -1,29 +1,35 @@
 const Profile = require("../models/Profile");
 
-async const friendOrganizer = (friends, selfId) => {
+async function friendOrganizer(friends, selfId) {
   const resultList = {
     mutual: [],
     requested: [],
     recieved: []
-  }
+  };
   friends.forEach(friend => {
-    const newFriend;
+    let newFriend;
     if (friend.mutual) {
       if (friend.requested === selfId) {
-        newFriend = await Profile.findById(friend.recieved);
+        newFriend = Profile.findById(friend.recieved);
       } else {
-        newFriend = await Profile.findById(friend.requested);
+        newFriend = Profile.findById(friend.requested);
       }
-      resultList.mutual.push(newFriend);
+      newFriend.then(f => {
+        resultList.mutual.push(f);
+      });
     } else if (friend.requested === selfId) {
-      newFriend = await Profile.findById(friend.recieved);
-      resultList.requested.push(newFriend);
+      newFriend = Profile.findById(friend.recieved);
+      newFriend.then(f => {
+        resultList.requested.push(f);
+      });
     } else {
-      newFriend = await Profile.findById(friend.requested);
-      resultList.recieved.push(newFriend);
+      newFriend = Profile.findById(friend.requested);
+      newFriend.then(f => {
+        resultList.recieved.push(f);
+      });
     }
-  })
+  });
   return resultList;
 }
 
-export default friendOrganizer;
+module.exports = friendOrganizer;

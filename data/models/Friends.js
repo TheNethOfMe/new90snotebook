@@ -11,7 +11,7 @@ const FriendListSchema = new Schema({
   // The user that will recieve the request
   // These will show up in the recipient's "requests" unless accepted or deleted is true
   received: {
-    type: Scema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "users"
   },
   // Indicates that the recipient accepted the request and the users are friends
@@ -29,7 +29,4 @@ const FriendListSchema = new Schema({
 });
 // A sender deleting the request deletes the request outright and the recipient will no longer see it as well
 
-module.exports = FriendListSchema = mongoose.model(
-  "friendlists",
-  FriendListSchema
-);
+module.exports = Friend = mongoose.model("friendlists", FriendListSchema);
