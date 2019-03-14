@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import SubMenu from "../common/SubMenu";
 import FindFriends from "./FindFriends";
+import MyFriends from "./MyFriends";
 
-export class MyFriends extends Component {
+export class FriendDash extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +27,7 @@ export class MyFriends extends Component {
   render() {
     let display;
     if (this.state.selected === "find") display = <FindFriends />;
+    if (this.state.selected === "friends") display = <MyFriends />;
     return (
       <div>
         <SubMenu
@@ -40,4 +42,4 @@ export class MyFriends extends Component {
   }
 }
 
-export default connect(null)(MyFriends);
+export default connect(null)(FriendDash);

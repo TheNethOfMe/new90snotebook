@@ -52,6 +52,7 @@ export class FindFriends extends Component {
           <h4>Search By Email</h4>
           <TextFieldGroup
             name="email"
+            type="email"
             placeholder="email"
             value={this.state.email}
             label="Email"

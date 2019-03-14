@@ -4,23 +4,46 @@ import { connect } from "react-redux";
 import { sendNewFriendRequest } from "../../actions/friendActions";
 
 export class FoundProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      relationship: "not friends"
+    };
+  }
+  componentWillMount() {
+    this.determineRelationship();
+  }
+  checkList = list => {
+    let result = false;
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].friendUserId === this.props.profile.user) {
+        result = true;
+      }
+    }
+    return result;
+  };
+  determineRelationship = () => {
+    if (this.checkList(this.props.friends.friends.mutual)) {
+      this.setState({ relationship: "mutual" });
+    } else if (this.checkList(this.props.friends.friends.pending)) {
+      this.setState({ relationship: "pending" });
+    } else if (this.checkList(this.props.friends.friends.received)) {
+      this.setState({ relationship: "recieved" });
+    } else {
+      this.setState({ relationship: "not friends" });
+    }
+  };
   handleNewRequest = recipientId => {
-    this.props.sendNewFriendRequest(recipientId);
+    this.props.sendNewFriendRequest({ recipientId });
   };
   render() {
     const { profile } = this.props;
-    const { friends } = this.props.friends;
     let friendOptions;
-    const checkUserList = list => {
-      list.find(item => {
-        return item.id === profile.id;
-      });
-    };
-    if (!!checkUserList(friends.mutual)) {
+    if (this.state.relationship === "mutual") {
       friendOptions = "You are mutal friends";
-    } else if (!!checkUserList(friends.requested)) {
-      friendOptions = "Freind request sent";
-    } else if (!!checkUserList(friends.received)) {
+    } else if (this.state.relationship === "pending") {
+      friendOptions = "Friend request sent";
+    } else if (this.state.relationship === "recieved") {
       friendOptions = "Wants to be your friend";
     } else {
       friendOptions = (

@@ -58,7 +58,7 @@ export const createNewProfile = profileData => dispatch => {
 export const searchForEmail = emailQuery => dispatch => {
   dispatch(setProfileLoading);
   axios
-    .get(`/api/profile/email/${emailQuery}`)
+    .get(`/api/profile/email?email=${emailQuery}`)
     .then(res => {
       dispatch({
         type: SEARCH_PROFILES,

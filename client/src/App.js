@@ -20,9 +20,9 @@ import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import FirstTime from "./components/dashboard/FirstTime";
 
-import "./sass/main.scss";
-
 import FriendDash from "./components/friends/FriendDash";
+
+import "./sass/main.scss";
 
 // check for token (means user is logged in)
 if (localStorage.notebookToken) {

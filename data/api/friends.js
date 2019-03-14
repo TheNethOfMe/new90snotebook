@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+const ObjectId = require("mongodb").ObjectID;
 
 // Load model
 const Friends = require("../models/Friends");
-
-// Load utility function
-const friendOrganizer = require("../utils/friendOrganizer");
 
 // ROUTE  GET api/friends
 // DESC   Builds a user's friend list
@@ -15,18 +13,66 @@ router.get(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Friends.find({
-      $or: [
-        { requested: req.user.id },
-        {
-          $and: [{ received: req.user.id }, { deleted: false }]
+    const queryID = new ObjectId(req.user.id);
+    Friends.aggregate([
+      {
+        $match: {
+          $or: [
+            { setTo: queryID },
+            {
+              $and: [{ sentFrom: queryID }, { deleted: false }]
+            }
+          ]
         }
-      ]
-    })
-      .then(friendData => {
-        return friendOrganizer(friendData, req.user.id);
-      })
-      .catch(err => console.log(err));
+      },
+      {
+        $addFields: {
+          getProfile: {
+            $cond: {
+              if: { $eq: ["$sentFrom", queryID] },
+              then: "$sentTo",
+              else: "$sentFrom"
+            }
+          }
+        }
+      },
+      {
+        $lookup: {
+          from: "profiles",
+          localField: "getProfile",
+          foreignField: "user",
+          as: "friendProfile"
+        }
+      },
+      {
+        $unwind: "$friendProfile"
+      },
+      {
+        $project: {
+          friendUserId: "$friendProfile.user",
+          friendFirstName: "$friendProfile.firstName",
+          friendLastname: "$friendProfile.lastName",
+          friendNickName: "$friendProfile.nickName",
+          friendTheme: "$friendProfile.theme",
+          friendEmail: "$friendProfile.email",
+          status: {
+            $switch: {
+              branches: [
+                {
+                  case: { $eq: ["$accepted", true] },
+                  then: "mutual"
+                },
+                {
+                  case: { $eq: ["$sentTo", "$friendProfile.user"] },
+                  then: "pending"
+                }
+              ],
+              default: "received"
+            }
+          }
+        }
+      }
+    ]).then(data => res.status(200).json(data));
   }
 );
 
@@ -38,15 +84,14 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const friendObject = {
-      requested: req.user.id,
-      received: req.body.recipientId,
+      sentFrom: req.user.id,
+      sentTo: req.body.recipientId,
       accepted: false,
       deleted: false
     };
-    console.log(friendObject);
     new Friend(friendObject)
       .save()
-      .then(() => res.status(201))
+      .then(data => res.status(200).json(data))
       .catch(err => console.log(err));
   }
 );

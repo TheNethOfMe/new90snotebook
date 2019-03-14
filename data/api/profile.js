@@ -148,15 +148,15 @@ router.get(
   }
 );
 
-// ROUTE  GET api/profile/email/:email
+// ROUTE  GET api/profile/email/?email=test@test.com
 // DESC   Gets a User Profile by email address
 // ACCESS Private
 router.get(
-  "/email/:email",
+  "/email",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const errors = {};
-    Profile.findOne({ email: req.params.email })
+    Profile.findOne({ email: req.query.email })
       // .populate("user", ["email"])
       .then(profile => {
         if (!profile) {

@@ -1,15 +1,18 @@
 import axios from "axios";
-import { GET_FRIENDS, FRIENDS_LOADING } from "./types";
+import { GET_FRIENDS, FRIENDS_LOADING, ADD_FRIEND } from "./types";
+import friendOrganizer from "../utils/friendOrganizer";
 
 // get Friends for user
 export const getUserFriends = () => dispatch => {
+  let friends = {};
   dispatch(setFriendsLoading);
   axios
     .get("/api/friends")
     .then(res => {
+      friends = friendOrganizer(res.data);
       dispatch({
         type: GET_FRIENDS,
-        payload: res.data
+        payload: friends
       });
     })
     .catch(err => {
@@ -21,8 +24,13 @@ export const sendNewFriendRequest = recipientId => dispatch => {
   axios
     .post("/api/friends", recipientId)
     .then(res => {
-      // change this to just add the one friend later
-      dispatch(getUserFriends);
+      dispatch({
+        type: ADD_FRIEND,
+        payload: {
+          cat: "new",
+          data: res.data
+        }
+      });
     })
     .catch(err => {
       console.log(err);

@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 const FriendListSchema = new Schema({
   // The user that initiated the request
   // These will show up in the sender's "sent requests" unless accepted is true
-  requested: {
+  sentFrom: {
     type: Schema.Types.ObjectId,
     ref: "users"
   },
   // The user that will recieve the request
   // These will show up in the recipient's "requests" unless accepted or deleted is true
-  received: {
+  sentTo: {
     type: Schema.Types.ObjectId,
     ref: "users"
   },
