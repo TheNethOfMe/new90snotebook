@@ -6,21 +6,27 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users"
   },
+  email: {
+    type: String,
+    required: true
+  },
   firstName: {
-    type: String
+    type: String,
+    required: true
   },
   lastName: {
-    type: String
+    type: String,
+    required: true
   },
   nickName: {
+    type: String
+  },
+  bio: {
     type: String
   },
   theme: {
     type: String,
     default: "paper-cup"
-  },
-  blacklist: {
-    type: [String]
   },
   searchableProfile: {
     type: Boolean,

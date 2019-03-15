@@ -27,3 +27,10 @@ export const fakeUserProfile = {
   blacklist: [],
   searchableProfile: true
 };
+
+// Notification
+export const fakeNotification = {
+  id: 56,
+  message: "This is a notification",
+  notificationFor: "TESTID"
+};

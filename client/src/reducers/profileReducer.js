@@ -1,12 +1,13 @@
 import {
   PROFILE_LOADING,
   GET_PROFILE,
-  CLEAR_CURRENT_PROFILE
+  CLEAR_CURRENT_PROFILE,
+  SEARCH_PROFILES
 } from "../actions/types";
 
 const initialState = {
   profile: null,
-  profiles: null,
+  profiles: [],
   loading: false
 };
 
@@ -27,6 +28,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         profile: null
+      };
+    case SEARCH_PROFILES:
+      return {
+        ...state,
+        profiles: action.payload,
+        loading: false
       };
     default:
       return state;

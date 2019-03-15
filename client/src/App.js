@@ -18,6 +18,9 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
 import Dashboard from "./components/dashboard/Dashboard";
+import FirstTime from "./components/dashboard/FirstTime";
+
+import FriendDash from "./components/friends/FriendDash";
 
 import "./sass/main.scss";
 
@@ -50,7 +53,11 @@ class App extends Component {
             </Switch>
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/firsttime" component={FirstTime} />
+
+              <PrivateRoute exact path="/friendDash" component={FriendDash} />
             </Switch>
+            <Switch />
             <Footer />
           </div>
         </Router>

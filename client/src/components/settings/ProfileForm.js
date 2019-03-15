@@ -30,7 +30,7 @@ export default class ProfileForm extends Component {
     this.props.handleSubmit({
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      nickName: this.state.lastName,
+      nickName: this.state.nickName,
       theme: this.state.theme,
       searchableProfile: this.state.searchableProfile
     });
@@ -110,5 +110,6 @@ export default class ProfileForm extends Component {
 
 ProfileForm.propTypes = {
   profile: PropTypes.object,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };

@@ -64,7 +64,8 @@ router.post("/login", (req, res) => {
         // user matched
         const payload = {
           id: user.id,
-          name: user.name
+          name: user.name,
+          hasProfile: user.hasProfile
         };
         // sign token user key from uncommited file
         jwt.sign(

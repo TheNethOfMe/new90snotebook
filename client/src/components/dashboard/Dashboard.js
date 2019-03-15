@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
-import FirstTime from "../dashboard/FirstTime";
+import Notification from "./Notifications";
 
 export class Dashboard extends Component {
   componentDidMount() {
@@ -16,11 +16,7 @@ export class Dashboard extends Component {
     if (!profile || loading) {
       dashboardContent = <Spinner />;
     } else {
-      if (Object.keys(profile).length > 0) {
-        dashboardContent = <h3>Display Profile</h3>;
-      } else {
-        dashboardContent = <FirstTime />;
-      }
+      dashboardContent = <Notification />;
     }
     return (
       <div className="dashbaord">
@@ -46,3 +42,9 @@ export default connect(
   mapStateToProps,
   { getCurrentProfile }
 )(Dashboard);
+
+// if (Object.keys(profile).length > 0) {
+//   dashboardContent = <Notification />;
+// } else {
+//   dashboardContent = <FirstTime />;
+// }
