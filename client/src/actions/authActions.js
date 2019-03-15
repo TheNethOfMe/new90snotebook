@@ -4,7 +4,6 @@ import setAuthToken from "../utils/setAuthToken";
 import setErrors from "./errorAction";
 
 import { SET_CURRENT_USER, PROFILE_CREATED } from "./types";
-import { getUserFriends } from "./friendActions";
 
 // Set Logged in User
 export const setCurrentUser = decoded => {
@@ -34,7 +33,6 @@ export const loginUser = userData => dispatch => {
       // Set current user
       const decoded = jwt_decode(token);
       dispatch(setCurrentUser(decoded));
-      dispatch(getUserFriends());
     })
     .catch(err => dispatch(setErrors(err)));
 };

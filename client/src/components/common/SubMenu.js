@@ -3,14 +3,18 @@ import PropTypes from "prop-types";
 
 export default function SubMenu({ notebookTabs, tabSelect, selected }) {
   return (
-    <div>
-      {notebookTabs.map(tab => {
+    <div className="submenu">
+      {notebookTabs.map((tab, idx) => {
+        const btnClass = `submenu__item-${idx}`;
+        const selectedClass =
+          selected === tab.link ? "submenu__item-select" : "submenu__item";
         return (
-          <div key={tab.title} onClick={() => tabSelect(tab.link)}>
-            <h5>
-              {selected === tab.link && <span>* </span>}
-              {tab.title}
-            </h5>
+          <div
+            className={btnClass}
+            key={idx}
+            onClick={() => tabSelect(tab.link)}
+          >
+            <h5 className={selectedClass}>{tab.title}</h5>
           </div>
         );
       })}
