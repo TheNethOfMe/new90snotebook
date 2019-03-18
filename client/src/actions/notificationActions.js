@@ -1,5 +1,6 @@
 import axios from "axios";
 import { GET_NOTIFICATIONS, NOTIFICATIONS_LOADING } from "./types";
+import { addToLocalStorageStore } from "../utils/localStorageStore";
 
 // set notifications loading
 export const setNotificationsLoading = () => {
@@ -8,7 +9,7 @@ export const setNotificationsLoading = () => {
   };
 };
 
-// get all user's notifications
+// populate Notifications store from database on login
 export const getAllNotifications = () => dispatch => {
   dispatch(setNotificationsLoading);
   axios
@@ -18,6 +19,7 @@ export const getAllNotifications = () => dispatch => {
         type: GET_NOTIFICATIONS,
         payload: res.data
       });
+      addToLocalStorageStore("notifications", res.data);
     })
     .catch(err => console.log(err));
 };
@@ -28,4 +30,12 @@ export const deleteNotification = id => dispatch => {
     .delete(`/api/notification/${id}`)
     .then(res => dispatch(getAllNotifications()))
     .catch(err => console.log(err));
+};
+
+// Populate store from local storage on reload
+export const populateNotificationsFromStorage = localStorageData => dispatch => {
+  dispatch({
+    type: GET_NOTIFICATIONS,
+    payload: localStorageData
+  });
 };

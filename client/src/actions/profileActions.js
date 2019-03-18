@@ -7,8 +7,9 @@ import {
 } from "./types";
 import setErrors from "./errorAction";
 import { userProfileWasCreated } from "./authActions";
+import { addToLocalStorageStore } from "../utils/localStorageStore";
 
-// Get current profile
+// populate Profile store from database on login
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading);
   axios
@@ -18,6 +19,7 @@ export const getCurrentProfile = () => dispatch => {
         type: GET_PROFILE,
         payload: res.data
       });
+      addToLocalStorageStore("profile", res.data);
     })
     .catch(err => {
       dispatch({
@@ -97,4 +99,12 @@ export const searchForUser = searchQuery => dispatch => {
         payload: []
       });
     });
+};
+
+// Populate store from local storage on reload
+export const populateProfileFromStorage = localStorageData => dispatch => {
+  dispatch({
+    type: GET_PROFILE,
+    payload: localStorageData
+  });
 };

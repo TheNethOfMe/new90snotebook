@@ -7,8 +7,6 @@ import store from "./store";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { clearCurrentProfile } from "./actions/profileActions";
 import { Provider } from "react-redux";
-import { getAllNotifications } from "./actions/notificationActions";
-import { getUserFriends } from "./actions/friendActions";
 
 import NoAuthRoute from "./components/routers/NoAuthRoute";
 import PrivateRoute from "./components/routers/PrivateRoute";
@@ -39,9 +37,6 @@ if (localStorage.notebookToken) {
     store.dispatch(clearCurrentProfile());
     // redirect to login
     window.location.href = "./login";
-  } else {
-    store.dispatch(getAllNotifications());
-    store.dispatch(getUserFriends());
   }
 }
 
