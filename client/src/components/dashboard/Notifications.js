@@ -1,12 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getAllNotifications } from "../../actions/notificationActions";
+import {
+  getAllNotifications,
+  populateNotificationsFromStorage
+} from "../../actions/notificationActions";
 import Spinner from "../common/Spinner";
 
 export class Notifications extends Component {
   componentDidMount() {
-    this.props.getAllNotifications();
+    const storeString = window.localStorage.getItem("My90sNBStore");
+    if (
+      !storeString ||
+      !JSON.parse(storeString).hasOwnProperty("notifications")
+    ) {
+      console.log("Notifications Get from DB");
+      this.props.getAllNotifications();
+    } else {
+      console.log("Notifications Get from LocalStorage");
+      const storeObject = JSON.parse(storeString);
+      this.props.populateNotificationsFromStorage(storeObject.notifications);
+    }
   }
   render() {
     const { notifications, loading } = this.props.notifications;
@@ -31,6 +45,7 @@ export class Notifications extends Component {
 
 Notifications.propTypes = {
   getAllNotifications: PropTypes.func.isRequired,
+  populateNotificationsFromStorage: PropTypes.func.isRequired,
   notifications: PropTypes.object.isRequired
 };
 
@@ -40,5 +55,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getAllNotifications }
+  { getAllNotifications, populateNotificationsFromStorage }
 )(Notifications);

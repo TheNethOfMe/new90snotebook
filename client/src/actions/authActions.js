@@ -2,8 +2,10 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
 import setErrors from "./errorAction";
+import * as lss from "../utils/localStorageStore";
 
 import { SET_CURRENT_USER, PROFILE_CREATED } from "./types";
+import { getCurrentProfile } from "./profileActions";
 
 // Set Logged in User
 export const setCurrentUser = decoded => {
@@ -33,6 +35,7 @@ export const loginUser = userData => dispatch => {
       // Set current user
       const decoded = jwt_decode(token);
       dispatch(setCurrentUser(decoded));
+      dispatch(getCurrentProfile());
     })
     .catch(err => dispatch(setErrors(err)));
 };
@@ -50,4 +53,5 @@ export const logoutUser = () => dispatch => {
   setAuthToken(false);
   // Set current user to empty object
   dispatch(setCurrentUser({}));
+  lss.emptyLocalStore();
 };

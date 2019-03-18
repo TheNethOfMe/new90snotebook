@@ -1,11 +1,7 @@
 import { GET_FRIENDS, FRIENDS_LOADING, ADD_FRIEND } from "../actions/types";
 
 const initialState = {
-  friends: {
-    mutual: [],
-    pending: [],
-    received: []
-  },
+  friends: null,
   loading: false
 };
 

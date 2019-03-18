@@ -1,13 +1,24 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getCurrentProfile } from "../../actions/profileActions";
+import {
+  getCurrentProfile,
+  populateProfileFromStorage
+} from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
 import Notification from "./Notifications";
 
 export class Dashboard extends Component {
   componentDidMount() {
-    this.props.getCurrentProfile();
+    const storeString = window.localStorage.getItem("My90sNBStore");
+    if (!storeString || !JSON.parse(storeString).hasOwnProperty("profile")) {
+      console.log("Profile Get from DB");
+      this.props.getCurrentProfile();
+    } else {
+      console.log("Profile Get from LocalStorage");
+      const storeObject = JSON.parse(storeString);
+      this.props.populateProfileFromStorage(storeObject.profile);
+    }
   }
   render() {
     const { profile, loading } = this.props.profile;
@@ -29,6 +40,7 @@ export class Dashboard extends Component {
 
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
+  populateProfileFromStorage: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -40,11 +52,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile }
+  { getCurrentProfile, populateProfileFromStorage }
 )(Dashboard);
-
-// if (Object.keys(profile).length > 0) {
-//   dashboardContent = <Notification />;
-// } else {
-//   dashboardContent = <FirstTime />;
-// }
