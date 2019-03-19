@@ -32,10 +32,8 @@ export class FriendDash extends Component {
   componentDidMount() {
     const storeString = window.localStorage.getItem("My90sNBStore");
     if (!storeString || !JSON.parse(storeString).hasOwnProperty("friends")) {
-      console.log("Friend Get from DB");
       this.props.getUserFriends();
     } else {
-      console.log("Friend Get from LocalStorage");
       const storeObject = JSON.parse(storeString);
       this.props.populateFriendsFromStorage(storeObject.friends);
     }
@@ -56,12 +54,12 @@ export class FriendDash extends Component {
 
     return (
       <div>
+        <h2>Friends Page</h2>
         <SubMenu
           notebookTabs={this.state.friendTabs}
           tabSelect={this.handleSelect}
           selected={this.state.selected}
         />
-        <h3>Friends Page</h3>
         {display}
       </div>
     );

@@ -12,10 +12,8 @@ export class Dashboard extends Component {
   componentDidMount() {
     const storeString = window.localStorage.getItem("My90sNBStore");
     if (!storeString || !JSON.parse(storeString).hasOwnProperty("profile")) {
-      console.log("Profile Get from DB");
       this.props.getCurrentProfile();
     } else {
-      console.log("Profile Get from LocalStorage");
       const storeObject = JSON.parse(storeString);
       this.props.populateProfileFromStorage(storeObject.profile);
     }
@@ -31,7 +29,7 @@ export class Dashboard extends Component {
     }
     return (
       <div className="dashbaord">
-        <h1>Welcome</h1>
+        <h2>Welcome</h2>
         {dashboardContent}
       </div>
     );
