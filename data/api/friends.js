@@ -18,9 +18,9 @@ router.get(
       {
         $match: {
           $or: [
-            { setTo: queryID },
+            { sentFrom: queryID },
             {
-              $and: [{ sentFrom: queryID }, { deleted: false }]
+              $and: [{ sentTo: queryID }, { deleted: false }]
             }
           ]
         }
@@ -72,7 +72,10 @@ router.get(
           }
         }
       }
-    ]).then(data => res.status(200).json(data));
+    ]).then(data => {
+      console.log(data);
+      res.status(200).json(data);
+    });
   }
 );
 

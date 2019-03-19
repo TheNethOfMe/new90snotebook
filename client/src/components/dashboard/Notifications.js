@@ -6,6 +6,7 @@ import {
   populateNotificationsFromStorage
 } from "../../actions/notificationActions";
 import Spinner from "../common/Spinner";
+import SingleNotification from "./SingleNotification";
 
 export class Notifications extends Component {
   componentDidMount() {
@@ -14,10 +15,8 @@ export class Notifications extends Component {
       !storeString ||
       !JSON.parse(storeString).hasOwnProperty("notifications")
     ) {
-      console.log("Notifications Get from DB");
       this.props.getAllNotifications();
     } else {
-      console.log("Notifications Get from LocalStorage");
       const storeObject = JSON.parse(storeString);
       this.props.populateNotificationsFromStorage(storeObject.notifications);
     }
@@ -29,12 +28,22 @@ export class Notifications extends Component {
     if (!notifications || loading) {
       componentContent = <Spinner />;
     } else if (notifications.length === 0) {
-      componentContent = <p>There are no notifications to display</p>;
+      componentContent = (
+        <SingleNotification
+          message="You have no notifications."
+          closable={false}
+        />
+      );
     } else {
       componentContent = (
         <div>
           {notifications.map(note => (
-            <p key={note._id}>{note.message}</p>
+            <SingleNotification
+              key={note._id}
+              id={note._id}
+              message={note.message}
+              closable={true}
+            />
           ))}
         </div>
       );

@@ -42,8 +42,8 @@ router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Notification.findByIdAndRemove(req.params.id)
-      .then(() => res.status(202))
+    Notification.findOneAndDelete({ _id: req.params.id })
+      .then(() => res.status(202).json({ msg: "Notification Deleted." }))
       .catch(err => console.log(err));
   }
 );

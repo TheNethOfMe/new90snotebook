@@ -28,7 +28,9 @@ export const getAllNotifications = () => dispatch => {
 export const deleteNotification = id => dispatch => {
   axios
     .delete(`/api/notification/${id}`)
-    .then(res => dispatch(getAllNotifications()))
+    .then(() => {
+      dispatch(getAllNotifications());
+    })
     .catch(err => console.log(err));
 };
 
