@@ -35,6 +35,7 @@ export class FoundProfile extends Component {
   };
   handleNewRequest = recipientId => {
     this.props.sendNewFriendRequest({ recipientId });
+    this.setState({ relationship: "pending" });
   };
   render() {
     const { profile } = this.props;

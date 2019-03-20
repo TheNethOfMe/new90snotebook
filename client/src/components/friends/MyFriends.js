@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import FriendPanel from "./FriendPanel";
 
 export class MyFriends extends Component {
   constructor(props) {
@@ -20,33 +21,38 @@ export class MyFriends extends Component {
 
     const mutuals = allFriends.mutual.map(friend => {
       return (
-        <div
+        <FriendPanel
           key={friend.friendUserId}
-          className="friend__panel friend__panel-mutual"
-        >
-          {friend.friendFirstName} {friend.friendLastname}
-        </div>
+          id={friend.friendUserId}
+          type="friend__panel-mutual"
+          first={friend.friendFirstName}
+          last={friend.friendLastName}
+          nick={friend.friendNickName}
+        />
       );
     });
     const received = allFriends.received.map(friend => {
       return (
-        <div
+        <FriendPanel
           key={friend.friendUserId}
-          className="friend__panel friend__panel-received"
-        >
-          {friend.friendFirstName} {friend.friendLastname} wants to be your
-          friend.
-        </div>
+          id={friend.friendUserId}
+          type="friend__panel-received"
+          first={friend.friendFirstName}
+          last={friend.friendLastName}
+          nick={friend.friendNickName}
+        />
       );
     });
     const pending = allFriends.pending.map(friend => {
       return (
-        <div
+        <FriendPanel
           key={friend.friendUserId}
-          className="friend__panel friend__panel-pending"
-        >
-          You sent {friend.friendFirstName} {friend.friendLastname} a request.
-        </div>
+          id={friend.friendUserId}
+          type="friend__panel-pending"
+          first={friend.friendFirstName}
+          last={friend.friendLastName}
+          nick={friend.friendNickName}
+        />
       );
     });
     return (

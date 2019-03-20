@@ -1,4 +1,10 @@
-import { GET_FRIENDS, FRIENDS_LOADING, ADD_FRIEND } from "../actions/types";
+import {
+  GET_FRIENDS,
+  FRIENDS_LOADING,
+  ADD_FRIEND,
+  REMOVE_FRIEND,
+  ACCEPT_FRIEND
+} from "../actions/types";
 
 const initialState = {
   friends: null,
@@ -19,19 +25,38 @@ export default function(state = initialState, action) {
         loading: true
       };
     case ADD_FRIEND:
-      let result = {};
-      if (action.payload.cat === "new") {
-        result.sent = state.friends.sent.concat(action.payload.data);
-      }
-      if (action.payload.cat === "accept") {
-        result.mutual = state.friends.mutual.concat(action.payload.data);
-      }
-      console.log(result);
       return {
         ...state,
         friends: {
           ...state.friends,
-          ...result
+          pending: state.friends.pending.concat(action.payload)
+        }
+      };
+    case REMOVE_FRIEND:
+      return {
+        ...state,
+        friends: {
+          ...state.friends,
+          [action.payload.list]: state.friends[action.payload.list].filter(
+            request => {
+              return request.friendUserId !== action.payload.data;
+            }
+          )
+        },
+        loading: false
+      };
+    case ACCEPT_FRIEND:
+      const acceptedFriend = state.friends.received.filter(
+        request => request.friendUserId === action.payload
+      );
+      return {
+        ...state,
+        friends: {
+          ...state.friends,
+          received: state.friends.received.filter(
+            request => request.friendUserId !== action.payload
+          ),
+          mutual: state.friends.mutual.concat(acceptedFriend)
         }
       };
     default:
