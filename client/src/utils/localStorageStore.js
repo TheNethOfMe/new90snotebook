@@ -19,5 +19,6 @@ export const addToLocalStorageStore = (dataKey, dataValue) => {
 export const updateLocalStorageStore = dataKey => {
   let currentData = JSON.parse(window.localStorage.getItem("My90sNBStore"));
   currentData[dataKey] = store.getState()[dataKey][dataKey];
+  console.log(currentData);
   window.localStorage.setItem("My90sNBStore", JSON.stringify(currentData));
 };

@@ -93,7 +93,6 @@ router.post(
       deleted: false
     };
     const friendID = new ObjectId(req.body.recipientId);
-    console.log(friendID);
     new Friend(friendObject)
       .save()
       .then(() => {
@@ -116,6 +115,41 @@ router.post(
           res.status(200).json(data);
         });
       })
+      .catch(err => console.log(err));
+  }
+);
+
+// ROUTE  PUT api/friends/
+// DESC   Updates a friend object's accepted or deleted field
+// ACCESS Private
+router.put(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const queryParams = { sentFrom: req.body.senderId, sentTo: req.user.id };
+    const updateParams = req.body.updateParams;
+    Friends.updateOne(queryParams, updateParams)
+      .then(() => res.status(200).json({ msg: "Update Success" }))
+      .catch(err => console.log(err));
+  }
+);
+
+// ROUTE  DELETE api/friends/
+// DESC   Deletes a friend object
+// ACCESS Private
+router.delete(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const otherId = req.body.otherId;
+    const userId = req.user.id;
+    Friends.deleteOne({
+      $or: [
+        { sentFrom: otherId, sentTo: userId },
+        { sentFrom: userId, sentId: otherId }
+      ]
+    })
+      .then(() => res.status(200).json({ msg: "Delete Success" }))
       .catch(err => console.log(err));
   }
 );

@@ -1,4 +1,10 @@
-import { GET_FRIENDS, FRIENDS_LOADING, ADD_FRIEND } from "../actions/types";
+import {
+  GET_FRIENDS,
+  FRIENDS_LOADING,
+  ADD_FRIEND,
+  REMOVE_FRIEND,
+  ACCEPT_FRIEND
+} from "../actions/types";
 
 const initialState = {
   friends: null,
@@ -24,6 +30,33 @@ export default function(state = initialState, action) {
         friends: {
           ...state.friends,
           pending: state.friends.pending.concat(action.payload)
+        }
+      };
+    case REMOVE_FRIEND:
+      return {
+        ...state,
+        friends: {
+          ...state.friends,
+          [action.payload.list]: state.friends[action.payload.list].filter(
+            request => {
+              return request.friendUserId !== action.payload.data;
+            }
+          )
+        },
+        loading: false
+      };
+    case ACCEPT_FRIEND:
+      const acceptedFriend = state.friends.received.filter(
+        request => request.friendUserId === action.payload
+      );
+      return {
+        ...state,
+        friends: {
+          ...state.friends,
+          received: state.friends.received.filter(
+            request => request.friendUserId !== action.payload
+          ),
+          mutual: state.friends.mutual.concat(acceptedFriend)
         }
       };
     default:

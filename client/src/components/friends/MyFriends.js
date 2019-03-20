@@ -23,6 +23,7 @@ export class MyFriends extends Component {
       return (
         <FriendPanel
           key={friend.friendUserId}
+          id={friend.friendUserId}
           type="friend__panel-mutual"
           first={friend.friendFirstName}
           last={friend.friendLastName}
@@ -34,6 +35,7 @@ export class MyFriends extends Component {
       return (
         <FriendPanel
           key={friend.friendUserId}
+          id={friend.friendUserId}
           type="friend__panel-received"
           first={friend.friendFirstName}
           last={friend.friendLastName}
@@ -45,6 +47,7 @@ export class MyFriends extends Component {
       return (
         <FriendPanel
           key={friend.friendUserId}
+          id={friend.friendUserId}
           type="friend__panel-pending"
           first={friend.friendFirstName}
           last={friend.friendLastName}
