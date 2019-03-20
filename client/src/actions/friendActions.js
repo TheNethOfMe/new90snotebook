@@ -1,7 +1,10 @@
 import axios from "axios";
 import { GET_FRIENDS, FRIENDS_LOADING, ADD_FRIEND } from "./types";
 import friendOrganizer from "../utils/friendOrganizer";
-import { addToLocalStorageStore } from "../utils/localStorageStore";
+import {
+  addToLocalStorageStore,
+  updateLocalStorageStore
+} from "../utils/localStorageStore";
 
 // populate Friends store from database on login
 export const getUserFriends = () => dispatch => {
@@ -22,17 +25,17 @@ export const getUserFriends = () => dispatch => {
     });
 };
 
+// creates new friend request and adds pending friend
 export const sendNewFriendRequest = recipientId => dispatch => {
+  dispatch(setFriendsLoading);
   axios
     .post("/api/friends", recipientId)
     .then(res => {
       dispatch({
         type: ADD_FRIEND,
-        payload: {
-          cat: "new",
-          data: res.data
-        }
+        payload: res.data
       });
+      updateLocalStorageStore("friends");
     })
     .catch(err => {
       console.log(err);
