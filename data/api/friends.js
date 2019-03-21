@@ -6,6 +6,7 @@ const ObjectId = require("mongodb").ObjectID;
 // Load model
 const Friends = require("../models/Friends");
 const Profile = require("../models/Profile");
+const Notification = require("../models/Notifications");
 
 // ROUTE  GET api/friends
 // DESC   Builds a user's friend list
@@ -112,7 +113,13 @@ router.post(
             }
           }
         ]).then(data => {
-          res.status(200).json(data);
+          const newNote = {
+            notificationFor: req.body.recipientId,
+            message: "You have a new friend request."
+          };
+          new Notification(newNote)
+            .save()
+            .then(() => res.status(200).json(data));
         });
       })
       .catch(err => console.log(err));
@@ -129,10 +136,23 @@ router.put(
     const queryParams = { sentFrom: req.body.senderId, sentTo: req.user.id };
     const updateParams = req.body.updateParams;
     Friends.updateOne(queryParams, updateParams)
-      .then(() => res.status(200).json({ msg: "Update Success" }))
+      .then(() => {
+        if (updateParams.hasOwnProperty("accepted")) {
+          const newNote = {
+            notificationFor: req.body.senderId,
+            message: "Someone accepted your friend request."
+          };
+          new Notification(newNote)
+            .save()
+            .then(() => res.status(200).json({ msg: "Update Success" }));
+        } else {
+          res.status(200).json({ msg: "Update Success" });
+        }
+      })
       .catch(err => console.log(err));
   }
 );
+//
 
 // ROUTE  DELETE api/friends/
 // DESC   Deletes a friend object
