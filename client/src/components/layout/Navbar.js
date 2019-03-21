@@ -10,8 +10,19 @@ export class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuToggle: false
+      menuToggle: false,
+      theme:
+        this.props.profile.profile && this.props.profile.profile.theme
+          ? this.props.profile.profile.theme
+          : "paper-cup"
     };
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.profile) {
+      if (nextProps.profile.profile) {
+        this.setState({ theme: nextProps.profile.profile.theme });
+      }
+    }
   }
   onLogoutClick = e => {
     e.preventDefault();
@@ -22,7 +33,7 @@ export class Navbar extends Component {
     this.setState({ menuToggle: !this.state.menuToggle });
   };
   returnIcon = icon => {
-    return `/images/themes/${this.props.theme}/${icon}-icon.png`;
+    return `/images/themes/${this.state.theme}/${icon}-icon.png`;
   };
   render() {
     const { isAuthenticated } = this.props.auth;
@@ -40,7 +51,7 @@ export class Navbar extends Component {
           </div>
         </li>
         <li>
-          <Link className="header__nav-item" to="/dashboard">
+          <Link className="header__nav-item" to="/settings">
             <img
               className="header__nav-icon"
               src={this.returnIcon("settings")}
@@ -101,14 +112,14 @@ export class Navbar extends Component {
 
 Navbar.propTypes = {
   auth: PropTypes.object.isRequired,
-  theme: PropTypes.string.isRequired,
+  profile: PropTypes.object.isRequired,
   logoutUser: PropTypes.func.isRequired,
   clearCurrentProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  theme: state.profile.theme ? state.profile.theme : "paper-cup"
+  profile: state.profile
 });
 
 export default connect(

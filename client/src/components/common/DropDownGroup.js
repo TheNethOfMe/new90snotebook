@@ -9,6 +9,7 @@ const DropDownGroup = ({
   info,
   onChange,
   disabled,
+  selected,
   options
 }) => {
   return (
@@ -23,6 +24,7 @@ const DropDownGroup = ({
         name={name}
         onChange={onChange}
         disabled={disabled}
+        defaultValue={selected}
       >
         {options.map(opt => {
           return (
@@ -45,6 +47,7 @@ DropDownGroup.propTypes = {
   error: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   disabled: PropTypes.bool.isRequired,
+  selected: PropTypes.string,
   options: PropTypes.array.isRequired
 };
 

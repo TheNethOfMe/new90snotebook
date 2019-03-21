@@ -20,6 +20,7 @@ import Register from "./components/auth/Register";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import FirstTime from "./components/dashboard/FirstTime";
+import Settings from "./components/settings/Settings";
 
 import FriendDash from "./components/friends/FriendDash";
 
@@ -55,7 +56,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/firsttime" component={FirstTime} />
-
+              <PrivateRoute exact path="/settings" component={Settings} />
               <PrivateRoute exact path="/friendDash" component={FriendDash} />
             </Switch>
             <Switch />

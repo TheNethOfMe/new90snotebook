@@ -1,0 +1,12 @@
+/* FONT */
+.old-mac-text {
+  font-family: "Luckiest Guy", sans-serif;
+}
+/* BACKGROUND */
+.main-background-old-mac {
+  @include main-background("/images/themes/old-mac/accent-background.png");
+}
+/* SUBBACKGROUND */
+.sub-background-old-mac {
+  @include sub-background("/images/themes/old-mac/body-background.png");
+}
