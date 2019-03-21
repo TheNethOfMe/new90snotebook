@@ -14,9 +14,13 @@ export class FindFriends extends Component {
       firstName: "",
       lastName: "",
       nickName: "",
-      errors: {}
+      errors: {},
+      selectedForm: "email"
     };
   }
+  onFormSelect = form => {
+    this.setState({ selectedForm: form });
+  };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -46,10 +50,10 @@ export class FindFriends extends Component {
         return <FoundProfile key={idx} profile={profile} />;
       });
     }
-    return (
-      <div>
+    let form;
+    if (this.state.selectedForm === "email") {
+      form = (
         <form onSubmit={this.onSubmitEmail}>
-          <h4>Search By Email</h4>
           <TextFieldGroup
             name="email"
             type="email"
@@ -59,10 +63,12 @@ export class FindFriends extends Component {
             error={errors.email}
             onChange={this.onChange}
           />
-          <button>Find Friend</button>
+          <button className="input__submit">Find Friend</button>
         </form>
+      );
+    } else {
+      form = (
         <form onSubmit={this.onSubmitName}>
-          <h4>Search By Name</h4>
           <TextFieldGroup
             name="firstName"
             placeholder="firstName"
@@ -87,9 +93,30 @@ export class FindFriends extends Component {
             error={errors.nickName}
             onChange={this.onChange}
           />
-          <button>Find Friend</button>
+          <button className="input__submit">Find Friends</button>
         </form>
-        <div className="results-container">{resultsContent}</div>
+      );
+    }
+    return (
+      <div className="friend__search-area">
+        <div className="friend__forms">
+          <div className="friend__form-picker">
+            <h4
+              className={this.state.selectedForm === "email" ? "selected" : ""}
+              onClick={() => this.onFormSelect("email")}
+            >
+              Search By Email
+            </h4>
+            <h4
+              className={this.state.selectedForm === "name" ? "selected" : ""}
+              onClick={() => this.onFormSelect("name")}
+            >
+              Search By Name
+            </h4>
+          </div>
+          {form}
+        </div>
+        <div className="friend__form-results">{resultsContent}</div>
       </div>
     );
   }

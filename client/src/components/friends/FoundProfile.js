@@ -56,7 +56,7 @@ export class FoundProfile extends Component {
       );
     }
     return (
-      <div>
+      <div className="friend__panel">
         <h4>
           Name: {profile.firstName} {profile.lastName}
         </h4>
