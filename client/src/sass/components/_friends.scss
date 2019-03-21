@@ -17,3 +17,38 @@
   padding: 12px;
   text-align: left;
 }
+
+.friend__search-area {
+  display: flex;
+  flex-direction: row;
+}
+
+.friend__forms {
+  width: 60%;
+  form {
+    padding: 16px;
+    .input.input__label {
+      text-align: left;
+    }
+  }
+}
+
+.friend__form-results {
+  width: 35%;
+}
+
+.friend__form-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  h4 {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.friend__form-picker h4.selected {
+  font-weight: bold;
+}
