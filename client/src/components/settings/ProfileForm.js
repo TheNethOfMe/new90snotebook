@@ -9,7 +9,8 @@ export default class ProfileForm extends Component {
     this.state = {
       firstName: props.profile ? props.profile.firstName : "",
       lastName: props.profile ? props.profile.lastName : "",
-      nickName: props.profile ? props.profile.nickName : "",
+      nickName:
+        props.profile && props.profile.nickName ? props.profile.nickName : "",
       theme: props.profile ? props.profile.theme : "paper-cup",
       searchableProfile: props.profile
         ? props.profile.searchableProfile
@@ -53,12 +54,20 @@ export default class ProfileForm extends Component {
         display: "Paper Cup"
       },
       {
-        val: "tropical",
-        display: "Tropical"
+        val: "food-court",
+        display: "Food Court"
       },
       {
         val: "frankly-lisa",
         display: "Frankly Lisa"
+      },
+      {
+        val: "old-mac",
+        display: "Old Mac"
+      },
+      {
+        val: "tropical",
+        display: "Tropical"
       }
     ];
     return (
@@ -100,6 +109,7 @@ export default class ProfileForm extends Component {
             label="Choose a theme"
             onChange={this.onChange}
             options={themeOptions}
+            selected={this.state.theme}
           />
           <input className="input__submit" type="submit" value="Finished!" />
         </form>
