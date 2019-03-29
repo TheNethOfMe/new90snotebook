@@ -6,12 +6,17 @@ import * as lss from "../utils/localStorageStore";
 
 import { SET_CURRENT_USER, PROFILE_CREATED, CHANGE_THEME } from "./types";
 import { getCurrentProfile } from "./profileActions";
+import {
+  updateThemeForLocalStorage,
+  addToLocalStorageStore
+} from "../utils/localStorageStore";
 
 // Set Logged in User
 export const setCurrentUser = decoded => {
+  const decodedWithTheme = updateThemeForLocalStorage(decoded);
   return {
     type: SET_CURRENT_USER,
-    payload: decoded
+    payload: decodedWithTheme
   };
 };
 
@@ -47,13 +52,15 @@ export const userProfileWasCreated = () => {
 
 // Update store when user updates theme
 export const userChangeTheme = theme => dispatch => {
+  console.log(theme.theme);
   axios
     .put("/api/users/update", theme)
-    .then(res => {
+    .then(update => {
       dispatch({
         type: CHANGE_THEME,
-        payload: theme
+        payload: theme.theme
       });
+      addToLocalStorageStore("theme", theme.theme);
     })
     .catch(err => console.log(err));
 };

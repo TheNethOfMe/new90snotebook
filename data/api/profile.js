@@ -47,7 +47,6 @@ router.post(
     if (req.body.firstName) profileFields.firstName = req.body.firstName;
     if (req.body.lastName) profileFields.lastName = req.body.lastName;
     if (req.body.nickName) profileFields.nickName = req.body.nickName;
-    if (req.body.theme) profileFields.theme = req.body.theme;
     if (req.body.searchableProfile)
       profileFields.searchableProfile = req.body.searchableProfile;
     Profile.findOne({ user: req.user.id }).then(profile => {

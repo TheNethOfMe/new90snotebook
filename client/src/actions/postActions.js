@@ -3,7 +3,8 @@ import {
   GET_POSTS,
   POSTS_LOADING,
   CREATE_POST,
-  GET_FRIEND_POSTS
+  GET_FRIEND_POSTS,
+  UPDATE_POST
 } from "./types";
 
 import {
@@ -54,6 +55,21 @@ export const createPost = postData => dispatch => {
       dispatch({
         type: CREATE_POST,
         payload: post.data
+      });
+      updateLocalStorageStore("posts");
+    })
+    .catch(err => console.log(err));
+};
+
+// Update post
+export const updatePost = postData => dispatch => {
+  dispatch(setPostsLoading);
+  axios
+    .put(`/api/posts/${postData.id}`, postData.updates)
+    .then(updatedPost => {
+      dispatch({
+        type: UPDATE_POST,
+        payload: updatedPost.data
       });
       updateLocalStorageStore("posts");
     })

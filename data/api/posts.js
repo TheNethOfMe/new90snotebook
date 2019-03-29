@@ -40,6 +40,20 @@ router.post(
   }
 );
 
+// ROUTE  PUT api/posts/:id
+// DESC   Updates a post
+// ACCESS Private
+router.put(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const updates = req.body.updates;
+    Posts.findOneAndUpdate({ id: req.body.id }, { $set: { updates } })
+      .then(update => res.status(200).json(update))
+      .catch(err => console.log(err));
+  }
+);
+
 // ROUTE  Get api/posts/friends
 // DESC   Gets all posts by friends
 // ACCESS Private

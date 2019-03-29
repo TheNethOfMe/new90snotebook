@@ -8,6 +8,7 @@ export class SinglePost extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      edit: false,
       content: props.post && props.post.content ? props.post.content : "",
       color: props.post && props.post.color ? props.post.color : "grey"
     };

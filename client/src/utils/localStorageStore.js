@@ -19,6 +19,16 @@ export const addToLocalStorageStore = (dataKey, dataValue) => {
 export const updateLocalStorageStore = dataKey => {
   let currentData = JSON.parse(window.localStorage.getItem("My90sNBStore"));
   currentData[dataKey] = store.getState()[dataKey][dataKey];
-  console.log(currentData);
   window.localStorage.setItem("My90sNBStore", JSON.stringify(currentData));
+};
+
+// Add or update theme for local storage
+export const updateThemeForLocalStorage = decoded => {
+  const currentStore = window.localStorage.getItem("My90sNBStore");
+  if (!currentStore && !JSON.parse(currentStore).theme) {
+    addToLocalStorageStore("theme", decoded.theme);
+  } else {
+    decoded.theme = JSON.parse(currentStore).theme;
+  }
+  return decoded;
 };

@@ -106,10 +106,11 @@ router.put(
   "/update",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    User.findByIdAndUpdate(req.user.id, {
-      $set: { theme: req.body.theme }
-    })
-      .then(update => res.status(201).json({ msg: "Update Success" }))
+    const updateTheme = { theme: req.body.theme };
+    User.findOneAndUpdate({ _id: req.user.id }, { $set: updateTheme })
+      .then(update => {
+        res.status(200).json(updateTheme);
+      })
       .catch(err => res.status(500).json({ error: err }));
   }
 );
