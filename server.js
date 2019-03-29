@@ -9,6 +9,7 @@ const users = require("./data/api/users");
 const profile = require("./data/api/profile");
 const notifications = require("./data/api/notifications");
 const friends = require("./data/api/friends");
+const posts = require("./data/api/posts");
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/notification", notifications);
 app.use("/api/friends", friends);
+app.use("/api/posts", posts);
 
 // Create Port
 const PORT = process.env.PORT || 5000;

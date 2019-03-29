@@ -17,5 +17,12 @@ export default () => (
         alt="My Friends"
       />
     </Link>
+    <Link to="/postDash">
+      <img
+        className="menu__button"
+        src="/images/PostsButton.png"
+        alt="My Posts"
+      />
+    </Link>
   </div>
 );
