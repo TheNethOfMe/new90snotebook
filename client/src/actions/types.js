@@ -17,3 +17,10 @@ export const FRIENDS_LOADING = "FRIENDS_LOADING";
 export const ADD_FRIEND = "ADD_FRIEND";
 export const REMOVE_FRIEND = "REMOVE_FRIEND";
 export const ACCEPT_FRIEND = "ACCEPT_FRIEND";
+
+export const GET_POSTS = "GET_POSTS";
+export const POSTS_LOADING = "POSTS_LOADING";
+export const CREATE_POST = "CREATE_POST";
+export const DELETE_POST = "DELETE_POST";
+export const UPDATE_POST = "UPDATE_POST";
+export const GET_FRIEND_POSTS = "GET_FRIEND_POSTS";
