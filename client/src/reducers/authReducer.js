@@ -1,4 +1,8 @@
-import { SET_CURRENT_USER, PROFILE_CREATED } from "../actions/types";
+import {
+  SET_CURRENT_USER,
+  PROFILE_CREATED,
+  CHANGE_THEME
+} from "../actions/types";
 import isEmpty from "../utils/isEmpty";
 
 const initialState = {
@@ -20,6 +24,14 @@ export default function(state = initialState, action) {
       return {
         ...state,
         hasProfile: true
+      };
+    case CHANGE_THEME:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          theme: action.payload
+        }
       };
     default:
       return state;

@@ -64,8 +64,9 @@ router.post("/login", (req, res) => {
         // user matched
         const payload = {
           id: user.id,
-          name: user.name,
-          hasProfile: user.hasProfile
+          email: user.email,
+          hasProfile: user.hasProfile,
+          theme: user.theme
         };
         // sign token user key from uncommited file
         jwt.sign(
@@ -95,6 +96,21 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     res.json(req.user);
+  }
+);
+
+// ROUTE  PUT api/users/update
+// DESC   Update's user's theme
+// ACCESS Private
+router.put(
+  "/update",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    User.findByIdAndUpdate(req.user.id, {
+      $set: { theme: req.body.theme }
+    })
+      .then(update => res.status(201).json({ msg: "Update Success" }))
+      .catch(err => res.status(500).json({ error: err }));
   }
 );
 

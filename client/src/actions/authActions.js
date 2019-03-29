@@ -4,7 +4,7 @@ import setAuthToken from "../utils/setAuthToken";
 import setErrors from "./errorAction";
 import * as lss from "../utils/localStorageStore";
 
-import { SET_CURRENT_USER, PROFILE_CREATED } from "./types";
+import { SET_CURRENT_USER, PROFILE_CREATED, CHANGE_THEME } from "./types";
 import { getCurrentProfile } from "./profileActions";
 
 // Set Logged in User
@@ -43,6 +43,19 @@ export const loginUser = userData => dispatch => {
 // Update store when user creates profile
 export const userProfileWasCreated = () => {
   return { type: PROFILE_CREATED };
+};
+
+// Update store when user updates theme
+export const userChangeTheme = theme => dispatch => {
+  axios
+    .put("/api/users/update", theme)
+    .then(res => {
+      dispatch({
+        type: CHANGE_THEME,
+        payload: theme
+      });
+    })
+    .catch(err => console.log(err));
 };
 
 // Log Out

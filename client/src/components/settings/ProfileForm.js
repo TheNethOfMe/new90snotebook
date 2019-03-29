@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+import { userChangeTheme } from "../../actions/authActions";
+
 import TextFieldGroup from "../common/TextFieldGroup";
 import DropDownGroup from "../common/DropDownGroup";
 
-export default class ProfileForm extends Component {
+export class ProfileForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +15,7 @@ export default class ProfileForm extends Component {
       lastName: props.profile ? props.profile.lastName : "",
       nickName:
         props.profile && props.profile.nickName ? props.profile.nickName : "",
-      theme: props.profile ? props.profile.theme : "paper-cup",
+      theme: props.theme,
       searchableProfile: props.profile
         ? props.profile.searchableProfile
         : false,
@@ -26,13 +30,16 @@ export default class ProfileForm extends Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  pickTheme = e => {
+    this.setState({ theme: e.target.value });
+    this.props.userChangeTheme(e.target.value);
+  };
   onSubmit = e => {
     e.preventDefault();
     this.props.handleSubmit({
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       nickName: this.state.nickName,
-      theme: this.state.theme,
       searchableProfile: this.state.searchableProfile
     });
   };
@@ -107,7 +114,7 @@ export default class ProfileForm extends Component {
           <DropDownGroup
             name="theme"
             label="Choose a theme"
-            onChange={this.onChange}
+            onChange={this.pickTheme}
             options={themeOptions}
             selected={this.state.theme}
           />
@@ -121,5 +128,15 @@ export default class ProfileForm extends Component {
 ProfileForm.propTypes = {
   profile: PropTypes.object,
   errors: PropTypes.object.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
+  userChangeTheme: PropTypes.func.isRequired
 };
+
+const mapStateToProps = state => ({
+  theme: state.auth.user.theme
+});
+
+export default connect(
+  mapStateToProps,
+  { userChangeTheme }
+)(ProfileForm);

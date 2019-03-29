@@ -15,6 +15,10 @@ const UserSchema = new Schema({
   hasProfile: {
     type: Boolean,
     default: false
+  },
+  theme: {
+    type: String,
+    default: "paper-cup"
   }
 });
 

@@ -24,10 +24,10 @@ const ProfileSchema = new Schema({
   bio: {
     type: String
   },
-  theme: {
-    type: String,
-    default: "paper-cup"
-  },
+  // theme: {
+  //   type: String,
+  //   default: "paper-cup"
+  // },
   searchableProfile: {
     type: Boolean,
     default: false
