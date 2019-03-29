@@ -1,6 +1,7 @@
 export const GET_ERRORS = "GET_ERRORS";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const PROFILE_CREATED = "PROFILE_CREATED";
+export const CHANGE_THEME = "CHANGE_THEME";
 
 export const GET_PROFILE = "GET_PROFILE";
 export const PROFILE_LOADING = "PROFILE_LOADING";

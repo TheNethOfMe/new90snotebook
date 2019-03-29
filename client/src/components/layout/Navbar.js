@@ -11,16 +11,13 @@ export class Navbar extends Component {
     super(props);
     this.state = {
       menuToggle: false,
-      theme:
-        this.props.profile.profile && this.props.profile.profile.theme
-          ? this.props.profile.profile.theme
-          : "paper-cup"
+      theme: this.props.auth.user.theme
     };
   }
   componentWillReceiveProps(nextProps) {
-    if (nextProps.profile) {
-      if (nextProps.profile.profile) {
-        this.setState({ theme: nextProps.profile.profile.theme });
+    if (nextProps.auth) {
+      if (nextProps.auth.user.theme) {
+        this.setState({ theme: nextProps.auth.user.theme });
       }
     }
   }
@@ -112,14 +109,14 @@ export class Navbar extends Component {
 
 Navbar.propTypes = {
   auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired,
+  // profile: PropTypes.object.isRequired,
   logoutUser: PropTypes.func.isRequired,
   clearCurrentProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
+  auth: state.auth
+  // profile: state.profile
 });
 
 export default connect(
