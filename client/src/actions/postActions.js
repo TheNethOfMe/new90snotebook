@@ -4,7 +4,8 @@ import {
   POSTS_LOADING,
   CREATE_POST,
   GET_FRIEND_POSTS,
-  UPDATE_POST
+  UPDATE_POST,
+  DELETE_POST
 } from "./types";
 
 import {
@@ -41,7 +42,11 @@ export const deletePost = id => dispatch => {
   axios
     .delete(`/api/posts/${id}`)
     .then(() => {
-      dispatch(getOwnPosts());
+      dispatch({
+        type: DELETE_POST,
+        payload: id
+      });
+      updateLocalStorageStore("posts");
     })
     .catch(err => console.log(err));
 };
@@ -65,8 +70,11 @@ export const createPost = postData => dispatch => {
 export const updatePost = postData => dispatch => {
   dispatch(setPostsLoading);
   axios
-    .put(`/api/posts/${postData.id}`, postData.updates)
+    .put(`/api/posts/${postData.id}`, postData)
     .then(updatedPost => {
+      const newKey = Object.keys(postData.updates)[0];
+      const newVal = postData.updates[Object.keys(postData.updates)[0]];
+      updatedPost.data[newKey] = newVal;
       dispatch({
         type: UPDATE_POST,
         payload: updatedPost.data
@@ -77,14 +85,17 @@ export const updatePost = postData => dispatch => {
 };
 
 // Get Friend's Posts
-export const getFrendsPosts = () => dispatch => {
+export const getFriendsPosts = () => dispatch => {
   dispatch(setPostsLoading);
-  axios.get("/api/posts/friends").then(posts => {
-    dispatch({
-      type: GET_FRIEND_POSTS,
-      payload: posts
-    }).catch(err => console.log(err));
-  });
+  axios
+    .get("/api/posts/friends")
+    .then(posts => {
+      dispatch({
+        type: GET_FRIEND_POSTS,
+        payload: posts.data
+      });
+    })
+    .catch(err => console.log(err));
 };
 
 // Populate store from local storage on reload

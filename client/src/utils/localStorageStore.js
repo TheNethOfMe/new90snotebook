@@ -24,11 +24,13 @@ export const updateLocalStorageStore = dataKey => {
 
 // Add or update theme for local storage
 export const updateThemeForLocalStorage = decoded => {
-  const currentStore = window.localStorage.getItem("My90sNBStore");
-  if (!currentStore && !JSON.parse(currentStore).theme) {
-    addToLocalStorageStore("theme", decoded.theme);
-  } else {
-    decoded.theme = JSON.parse(currentStore).theme;
+  if (Object.keys(decoded).length > 0) {
+    const currentStore = window.localStorage.getItem("My90sNBStore");
+    if (!currentStore || !JSON.parse(currentStore).theme) {
+      addToLocalStorageStore("theme", decoded.theme);
+    } else {
+      decoded.theme = JSON.parse(currentStore).theme;
+    }
   }
   return decoded;
 };

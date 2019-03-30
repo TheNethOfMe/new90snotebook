@@ -3,7 +3,8 @@ import {
   POSTS_LOADING,
   CREATE_POST,
   GET_FRIEND_POSTS,
-  UPDATE_POST
+  UPDATE_POST,
+  DELETE_POST
 } from "../actions/types";
 
 import replaceInArr from "../utils/replaceInArr";
@@ -38,6 +39,11 @@ export default function(state = initialState, action) {
         ...state,
         posts: replaceInArr(state.posts, action.payload),
         loading: false
+      };
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter(post => post._id !== action.payload)
       };
     case GET_FRIEND_POSTS:
       return {
