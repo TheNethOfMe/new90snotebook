@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+const ObjectId = require("mongodb").ObjectID;
 
 // Load models
 const Posts = require("../models/Posts");
@@ -36,6 +37,29 @@ router.post(
     new Posts(newPost)
       .save()
       .then(post => res.status(200).json(post))
+      .catch(err => console.log(err));
+  }
+);
+
+// ROUTE  PUT api/posts/:id
+// DESC   Updates a post
+// ACCESS Private
+router.put(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    let updates = {};
+    if (req.body.updates.color) {
+      updates.color = req.body.updates.color;
+    }
+    if (req.body.updates.content) {
+      updates.content = req.body.updates.content;
+    }
+    const queryID = new ObjectId(req.params.id);
+    Posts.findOneAndUpdate({ _id: queryID }, { $set: updates }, { new: true })
+      .then(update => {
+        res.status(200).json(update);
+      })
       .catch(err => console.log(err));
   }
 );
@@ -84,7 +108,7 @@ router.get(
       {
         $lookup: {
           from: "posts",
-          localField: "$friendProfile.user",
+          localField: "friendProfile.user",
           foreignField: "createdBy",
           as: "userPosts"
         }
@@ -98,14 +122,20 @@ router.get(
           userPosts: "$userPosts"
         }
       }
-    ]).then(posts => console.log(posts));
+    ])
+      .then(posts => res.status(200).json(posts))
+      .catch(err => console.log(err));
   }
 );
 
+// ROUTE  Delete api/posts/:id
+// DESC   Deletes one post
+// ACCESS Private
 router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    console.log(req.params.id);
     Posts.findOneAndDelete({ _id: req.params.id })
       .then(() => res.status(200).json({ msg: "Delete Success" }))
       .catch(err => console.log(err));

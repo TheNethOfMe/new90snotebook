@@ -31,8 +31,9 @@ export class ProfileForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   pickTheme = e => {
-    this.setState({ theme: e.target.value });
-    this.props.userChangeTheme(e.target.value);
+    const theme = e.target.value;
+    this.setState({ theme });
+    this.props.userChangeTheme({ theme });
   };
   onSubmit = e => {
     e.preventDefault();

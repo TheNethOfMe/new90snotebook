@@ -34,19 +34,6 @@ PrivateRoute.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  // const returnProps = {
-  //   auth: state.auth,
-  //   bgTheme: "main-background-paper-cup",
-  //   subBgTheme: "sub-background-paper-cup"
-  // };
-  // if (state.profile && state.profile.profile) {
-  //   returnProps.hasProfile = !!Object.keys(state.profile.profile).length;
-  //   if (state.profile.profile.theme) {
-  //     returnProps.bgTheme = `main-background-${state.profile.profile.theme}`;
-  //     returnProps.subBgTheme = `sub-background-${state.profile.profile.theme}`;
-  //   }
-  // }
-  // return returnProps;
   auth: state.auth,
   bgTheme: `main-background-${state.auth.user.theme}`,
   subBgTheme: `sub-background-${state.auth.user.theme}`
