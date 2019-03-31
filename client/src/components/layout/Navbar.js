@@ -11,6 +11,7 @@ export class Navbar extends Component {
     super(props);
     this.state = {
       menuToggle: false,
+      hide: false,
       theme: this.props.auth.user.theme
     };
   }
@@ -27,7 +28,14 @@ export class Navbar extends Component {
     this.props.logoutUser();
   };
   toggleMenu = () => {
-    this.setState({ menuToggle: !this.state.menuToggle });
+    if (this.state.menuToggle) {
+      this.setState({ hide: true });
+      setTimeout(() => {
+        this.setState({ menuToggle: false });
+      }, 300);
+    } else {
+      this.setState({ hide: false, menuToggle: !this.state.menuToggle });
+    }
   };
   returnIcon = icon => {
     return `/images/themes/${this.state.theme}/${icon}-icon.png`;
@@ -101,7 +109,7 @@ export class Navbar extends Component {
             {isAuthenticated ? authLinks : guestLinks}
           </div>
         </nav>
-        {showLinks && <Menu />}
+        {showLinks && <Menu hide={this.state.hide} />}
       </div>
     );
   }
@@ -109,14 +117,12 @@ export class Navbar extends Component {
 
 Navbar.propTypes = {
   auth: PropTypes.object.isRequired,
-  // profile: PropTypes.object.isRequired,
   logoutUser: PropTypes.func.isRequired,
   clearCurrentProfile: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth
-  // profile: state.profile
 });
 
 export default connect(

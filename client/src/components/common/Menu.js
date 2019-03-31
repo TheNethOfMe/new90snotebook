@@ -1,25 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default () => (
-  <div id="menu__display">
+export default ({ hide }) => (
+  <div id="menu__display" className={hide ? "hide" : ""}>
     <Link to="/dashboard">
       <img
-        className="menu__button"
+        className={hide ? "menu__button hide" : "menu__button"}
         src="/images/DashboardButton.png"
         alt="Dashboard"
       />
     </Link>
     <Link to="/friendDash">
       <img
-        className="menu__button"
+        className={hide ? "menu__button hide" : "menu__button"}
         src="/images/MyFriendsButton.png"
         alt="My Friends"
       />
     </Link>
     <Link to="/postDash">
       <img
-        className="menu__button"
+        className={hide ? "menu__button hide" : "menu__button"}
         src="/images/PostsButton.png"
         alt="My Posts"
       />
