@@ -16,9 +16,6 @@ export class ProfileForm extends Component {
       nickName:
         props.profile && props.profile.nickName ? props.profile.nickName : "",
       theme: props.theme,
-      searchableProfile: props.profile
-        ? props.profile.searchableProfile
-        : false,
       errors: props.errors
     };
   }
@@ -46,16 +43,6 @@ export class ProfileForm extends Component {
   };
   render() {
     const { errors } = this.state;
-    const searchableOptions = [
-      {
-        val: false,
-        display: "Make my profile hidden"
-      },
-      {
-        val: true,
-        display: "Make my profile searchable"
-      }
-    ];
     const themeOptions = [
       {
         val: "paper-cup",
@@ -105,12 +92,11 @@ export class ProfileForm extends Component {
             error={errors.nickName}
             onChange={this.onChange}
           />
-          <DropDownGroup
-            name="searchableProfile"
-            label="Do you want to be searchable?"
-            info="Hidden profiles can not be found or friended by anyone else."
+          <label htmlFor="bio">Tell us about yourself.</label>
+          <textarea
+            name="bio"
             onChange={this.onChange}
-            options={searchableOptions}
+            value={this.state.bio}
           />
           <DropDownGroup
             name="theme"
