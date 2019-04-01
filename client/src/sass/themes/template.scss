@@ -1,5 +1,8 @@
 /* FOR REFERENCE ONLY */
 
+/* MENU-COLOR */
+$xxxx-menu: #f8d460; /* insert color here */
+
 /* FONT */
 .xxxx-text {
   font-family: "Luckiest Guy", sans-serif;
@@ -11,4 +14,8 @@
 /* SUBBACKGROUND */
 .sub-background-xxxx {
   @include sub-background("/images/themes/xxxx/body-background.png");
+}
+/* MENUBACKGROUND */
+.menu-background-xxxx {
+  background: $xxxx-menu;
 }

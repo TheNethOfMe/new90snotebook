@@ -38,7 +38,7 @@ export class ProfileForm extends Component {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       nickName: this.state.nickName,
-      searchableProfile: this.state.searchableProfile
+      bio: this.state.bio
     });
   };
   render() {
@@ -92,12 +92,17 @@ export class ProfileForm extends Component {
             error={errors.nickName}
             onChange={this.onChange}
           />
-          <label htmlFor="bio">Tell us about yourself.</label>
-          <textarea
-            name="bio"
-            onChange={this.onChange}
-            value={this.state.bio}
-          />
+          <div className="input">
+            <label className="input__label" htmlFor="bio">
+              Tell us about yourself.
+            </label>
+            <textarea
+              className="input__field"
+              name="bio"
+              onChange={this.onChange}
+              value={this.state.bio}
+            />
+          </div>
           <DropDownGroup
             name="theme"
             label="Choose a theme"

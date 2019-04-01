@@ -1,3 +1,6 @@
+/* MENU-COLOR */
+$tropical-menu: #ff3366; /* insert color here */
+
 /* FONT */
 .tropical-text {
   font-family: "Luckiest Guy", sans-serif;
@@ -9,4 +12,8 @@
 /* SUBBACKGROUND */
 .sub-background-tropical {
   @include sub-background("/images/themes/tropical/body-background.png");
+}
+/* MENUBACKGROUND */
+.menu-background-tropical {
+  background: $tropical-menu;
 }

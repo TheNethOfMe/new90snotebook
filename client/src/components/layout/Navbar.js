@@ -109,7 +109,12 @@ export class Navbar extends Component {
             {isAuthenticated ? authLinks : guestLinks}
           </div>
         </nav>
-        {showLinks && <Menu hide={this.state.hide} />}
+        {showLinks && (
+          <Menu
+            hide={this.state.hide}
+            themebg={`menu-background-${this.state.theme}`}
+          />
+        )}
       </div>
     );
   }

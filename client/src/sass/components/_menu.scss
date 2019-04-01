@@ -1,6 +1,5 @@
 #menu__display {
   animation: menu-drop 0.3s linear;
-  background-color: black;
   display: flex;
   flex-direction: row;
   .hide {
@@ -15,9 +14,15 @@
 
 img.menu__button {
   animation: button-slide 0.3s linear;
+  height: 75px;
+  width: 150px;
   .hide {
     animation: button-slide 0.3s linear;
     animation-direction: reverse;
+  }
+  &:hover {
+    border: $highlight-color 1px solid;
+    box-sizing: border-box;
   }
 }
 

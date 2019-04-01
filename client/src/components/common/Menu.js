@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default ({ hide }) => (
-  <div id="menu__display" className={hide ? "hide" : ""}>
+export default ({ hide, themebg }) => (
+  <div id="menu__display" className={hide ? `${themebg} hide` : themebg}>
     <Link to="/dashboard">
       <img
         className={hide ? "menu__button hide" : "menu__button"}
