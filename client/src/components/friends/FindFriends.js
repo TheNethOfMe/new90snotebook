@@ -44,7 +44,7 @@ export class FindFriends extends Component {
     if (loading) {
       resultsContent = <Spinner />;
     } else if (!profiles.length) {
-      resultsContent = <p>No Profiles to Display</p>;
+      resultsContent = <p className="friend__panel">No Profiles to Display</p>;
     } else {
       resultsContent = profiles.map((profile, idx) => {
         return <FoundProfile key={idx} profile={profile} />;

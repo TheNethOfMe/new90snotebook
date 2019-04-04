@@ -60,6 +60,7 @@
 
 .post__container-black {
   @include post("/images/backgrounds/black-note.png");
+  color: white;
 }
 
 .post__container-white {
@@ -106,6 +107,13 @@
   -webkit-box-shadow: -1px 0px 0px 9px rgba(245, 234, 17, 1);
   -moz-box-shadow: -1px 0px 0px 9px rgba(245, 234, 17, 1);
   box-shadow: -1px 0px 0px 9px rgba(245, 234, 17, 1);
+}
+
+.post__content {
+  align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: center;
 }
 
 .post__grey-chip {

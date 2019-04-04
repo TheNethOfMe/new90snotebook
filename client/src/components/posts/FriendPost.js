@@ -14,7 +14,7 @@ export default class FriendPost extends Component {
         <p>
           On {displayDate} {this.props.post.name} said:{" "}
         </p>
-        <p>{this.props.post.content}</p>
+        <div className="post__content">{this.props.post.content}</div>
       </div>
     );
   }

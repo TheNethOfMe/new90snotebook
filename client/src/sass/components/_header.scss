@@ -12,6 +12,14 @@
   }
 }
 
+#header__brand {
+  padding: 0;
+  width: 100px;
+  img {
+    width: 100%;
+  }
+}
+
 .header__nav-item {
   color: #ccc;
   display: flex;

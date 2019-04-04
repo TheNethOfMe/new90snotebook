@@ -98,6 +98,12 @@ export class Navbar extends Component {
         <nav className="header__nav">
           <div className="header__nav-section">
             <ul>
+              <li id="header__brand">
+                <img
+                  src="/images/icons/logo-transparent.png"
+                  alt="my 90s notebook logo"
+                />
+              </li>
               <li>
                 <Link className="header__nav-item" to="/">
                   <p>My 90s Notebook</p>
