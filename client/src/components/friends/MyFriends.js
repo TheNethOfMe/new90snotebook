@@ -58,15 +58,39 @@ export class MyFriends extends Component {
     return (
       <div className="friend__main">
         <div className="friend__buttons">
-          <button onClick={() => this.toggleState("mutualState")}>
-            {mutualState ? "Hide Mutuals" : "Show Mutuals"}
-          </button>
-          <button onClick={() => this.toggleState("receivedState")}>
-            {receivedState ? "Hide Requests" : "Show Requests"}
-          </button>
-          <button onClick={() => this.toggleState("pendingState")}>
-            {pendingState ? "Hide Pending" : "Show Pending"}
-          </button>
+          <div
+            className="friend__selector"
+            onClick={() => this.toggleState("mutualState")}
+          >
+            <p>Mutual </p>
+            {mutualState ? (
+              <i className="far fa-eye" />
+            ) : (
+              <i className="far fa-eye-slash" />
+            )}
+          </div>
+          <div
+            className="friend__selector"
+            onClick={() => this.toggleState("receivedState")}
+          >
+            <p>Requests </p>
+            {receivedState ? (
+              <i className="far fa-eye" />
+            ) : (
+              <i className="far fa-eye-slash" />
+            )}
+          </div>
+          <div
+            className="friend__selector"
+            onClick={() => this.toggleState("pendingState")}
+          >
+            <p>Pending </p>
+            {pendingState ? (
+              <i className="far fa-eye" />
+            ) : (
+              <i className="far fa-eye-slash" />
+            )}
+          </div>
         </div>
         <div className="friend__display">
           {mutualState && <div>{mutuals}</div>}

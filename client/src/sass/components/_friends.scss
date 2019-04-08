@@ -4,18 +4,31 @@
 }
 
 .friend__buttons {
-  width: 20%;
+  width: 24%;
 }
 
 .friend__display {
-  width: 77%;
+  width: 75%;
 }
 
 .friend__panel {
-  background-color: antiquewhite;
-  margin: 8px;
-  padding: 12px;
-  text-align: left;
+  @extend %notice-bubble;
+}
+
+.friend__selector {
+  background: #333;
+  color: #eee;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3em;
+  justify-content: space-evenly;
+  margin: 4px;
+  padding: 4px;
+  &:hover {
+    background: $highlight-color;
+    color: #333;
+    cursor: pointer;
+  }
 }
 
 .friend__search-area {

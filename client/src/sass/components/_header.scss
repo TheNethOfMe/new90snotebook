@@ -12,6 +12,14 @@
   }
 }
 
+#header__brand {
+  padding: 0;
+  width: 100px;
+  img {
+    width: 100%;
+  }
+}
+
 .header__nav-item {
   color: #ccc;
   display: flex;
@@ -23,9 +31,9 @@
     color: #ccc;
   }
   &:hover {
-    color: #ebfc26;
+    color: $highlight-color;
     cursor: pointer;
-    text-shadow: 1px 1px 2px #ebfc26;
+    text-shadow: 1px 1px 2px $highlight-color;
   }
 }
 

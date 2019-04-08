@@ -79,7 +79,9 @@ export class SinglePost extends Component {
           </div>
         )}
 
-        {!this.state.edit && <div>{this.state.content}</div>}
+        {!this.state.edit && (
+          <div className="post__content">{this.state.content}</div>
+        )}
 
         {this.state.edit && (
           <div>
