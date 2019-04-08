@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 // DB Config
 console.log("ENV!!!!!", process.env.NODE_ENV);
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys_dev").mongoURI;
 
 // Connect to MongoDB
 mongoose
