@@ -105,6 +105,7 @@ export const deleteRelationship = (otherId, list) => dispatch => {
     .catch(err => console.log(err));
 };
 
+// Sets friends loading to true
 export const setFriendsLoading = () => {
   return {
     type: FRIENDS_LOADING

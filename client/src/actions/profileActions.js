@@ -3,7 +3,8 @@ import {
   GET_PROFILE,
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
-  SEARCH_PROFILES
+  SEARCH_PROFILES,
+  CLEAR_PROFILES
 } from "./types";
 import setErrors from "./errorAction";
 import { userProfileWasCreated } from "./authActions";
@@ -99,6 +100,13 @@ export const searchForUser = searchQuery => dispatch => {
         payload: []
       });
     });
+};
+
+// Clear Profiles from search
+export const clearProfileSearch = () => dispatch => {
+  dispatch({
+    type: CLEAR_PROFILES
+  });
 };
 
 // Populate store from local storage on reload

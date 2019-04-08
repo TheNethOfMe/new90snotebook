@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { searchForUser, searchForEmail } from "../../actions/profileActions";
+import {
+  searchForUser,
+  searchForEmail,
+  clearProfileSearch
+} from "../../actions/profileActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 import Spinner from "../common/Spinner";
 import FoundProfile from "./FoundProfile";
@@ -18,7 +22,20 @@ export class FindFriends extends Component {
       selectedForm: "email"
     };
   }
+  componentWillUnmount() {
+    this.clearAll();
+  }
+  clearAll = () => {
+    this.props.clearProfileSearch();
+    this.setState({
+      email: "",
+      firstName: "",
+      lastName: "",
+      nickName: ""
+    });
+  };
   onFormSelect = form => {
+    this.clearAll();
     this.setState({ selectedForm: form });
   };
   onChange = e => {
@@ -26,7 +43,9 @@ export class FindFriends extends Component {
   };
   onSubmitEmail = e => {
     e.preventDefault();
-    this.props.searchForEmail(this.state.email);
+    const emailParam = this.state.email;
+    this.clearAll();
+    this.props.searchForEmail(emailParam);
   };
   onSubmitName = e => {
     e.preventDefault();
@@ -35,10 +54,11 @@ export class FindFriends extends Component {
       lastName: this.state.lastName,
       nickName: this.state.nickName
     };
+    this.clearAll();
     this.props.searchForUser(query);
   };
   render() {
-    const { errors } = this.state;
+    const { errors, selectedForm } = this.state;
     const { loading, profiles } = this.props.profile;
     let resultsContent;
     if (loading) {
@@ -51,7 +71,7 @@ export class FindFriends extends Component {
       });
     }
     let form;
-    if (this.state.selectedForm === "email") {
+    if (selectedForm === "email") {
       form = (
         <form onSubmit={this.onSubmitEmail}>
           <TextFieldGroup
@@ -125,7 +145,8 @@ export class FindFriends extends Component {
 FindFriends.propTyes = {
   profile: PropTypes.object.isRequired,
   searchForUser: PropTypes.func.isRequired,
-  searchForEmail: PropTypes.func.isRequired
+  searchForEmail: PropTypes.func.isRequired,
+  clearProfileSearch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
@@ -134,5 +155,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { searchForUser, searchForEmail }
+  { searchForUser, searchForEmail, clearProfileSearch }
 )(FindFriends);
