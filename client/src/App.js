@@ -53,8 +53,7 @@ class App extends Component {
               <NoAuthRoute exact path="/" component={Landing} />
               <NoAuthRoute exact path="/login" component={Login} />
               <NoAuthRoute exact path="/register" component={Register} />
-            </Switch>
-            <Switch>
+
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/firsttime" component={FirstTime} />
               <PrivateRoute exact path="/settings" component={Settings} />

@@ -63,6 +63,10 @@ export class ProfileForm extends Component {
       {
         val: "tropical",
         display: "Tropical"
+      },
+      {
+        val: "splat",
+        display: "Sloppy Splat"
       }
     ];
     return (
